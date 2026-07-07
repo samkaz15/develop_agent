@@ -10,7 +10,7 @@
 | **Version** | 1.0.0 |
 | **Status** | Active |
 | **Last Updated** | 2026-07-07 |
-| **関連ドキュメント** | [`templates/Agent_Base_Template.md`](../templates/Agent_Base_Template.md) |
+| **関連ドキュメント** | [`Agent_Base_Template.md`](./Agent_Base_Template.md) |
 
 ---
 
@@ -131,7 +131,7 @@ flowchart TD
 1. **開始前**: Inputが揃っているかChecklist（開始前）で検証。不足があれば前工程に差し戻す。
 2. **作業中**: AI TasksはClaude Code等のAIエージェントに委譲し、Human Tasksは人間が実施する。
 3. **完了時**: Deliverablesを対応ディレクトリにコミット → Reviewを実施 → Exit Criteriaを判定。
-4. **引き渡し**: [Agent Base Template](../templates/Agent_Base_Template.md) の Handoff Note 形式で次工程へ引き渡す。
+4. **引き渡し**: [Agent Base Template](./Agent_Base_Template.md) の Handoff Note 形式で次工程へ引き渡す。
 
 ### レビューの共通3段階
 

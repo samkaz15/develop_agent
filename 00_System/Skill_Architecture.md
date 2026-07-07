@@ -11,7 +11,7 @@
 | **Version** | 1.0.0 |
 | **Status** | Active |
 | **Last Updated** | 2026-07-07 |
-| **関連ドキュメント** | [`Development_Workflow.md`](./Development_Workflow.md) / [`Agent_Architecture.md`](./Agent_Architecture.md) / [`templates/Agent_Base_Template.md`](../templates/Agent_Base_Template.md) |
+| **関連ドキュメント** | [`Development_Workflow.md`](./Development_Workflow.md) / [`Agent_Architecture.md`](./Agent_Architecture.md) / [`Agent_Base_Template.md`](./Agent_Base_Template.md) |
 
 ---
 

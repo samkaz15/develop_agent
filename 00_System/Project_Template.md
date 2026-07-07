@@ -327,7 +327,7 @@ flowchart TD
 ### Documentation Rule
 - すべての意思決定はMarkdownで記録する（口頭・チャットのみの決定は無効）
 - 1ファイル1トピック。肥大化したら分割する
-- 各ドキュメントは [`templates/Agent_Base_Template.md`](../templates/Agent_Base_Template.md) 準拠のHandoff Note形式で引き渡す
+- 各ドキュメントは [`Agent_Base_Template.md`](./Agent_Base_Template.md) 準拠のHandoff Note形式で引き渡す
 - 推測には「仮説:」と明記する（[`Quality_Standard.md`](./Quality_Standard.md) 共通5基準「検証可能性」）
 
 ### Code Style

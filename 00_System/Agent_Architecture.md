@@ -4,14 +4,14 @@
 >
 > Claude Codeによる自律開発を支える「仮想開発組織」の設計書。
 > 5つのLayer・13のAgentで構成され、[`Development_Workflow.md`](./Development_Workflow.md) の各Phaseに対応してAgentを呼び出す。
-> 各Agentの詳細定義ファイルは [`templates/Agent_Base_Template.md`](../templates/Agent_Base_Template.md) に準拠して `agents/` 配下に作成する。
+> 各Agentの詳細定義ファイルは [`Agent_Base_Template.md`](./Agent_Base_Template.md) に準拠して `agents/` 配下に作成する。
 
 | 項目 | 内容 |
 |---|---|
 | **Version** | 1.0.0 |
 | **Status** | Active |
 | **Last Updated** | 2026-07-07 |
-| **関連ドキュメント** | [`Development_Workflow.md`](./Development_Workflow.md) / [`Agent_Base_Template.md`](../templates/Agent_Base_Template.md) |
+| **関連ドキュメント** | [`Development_Workflow.md`](./Development_Workflow.md) / [`Agent_Base_Template.md`](./Agent_Base_Template.md) |
 
 ---
 
@@ -965,7 +965,7 @@ flowchart TD
 ### 運用ルール
 
 - Agentの追加・削除・責任範囲の変更は Pull Request + Owner承認を必須とする（Major バージョンアップ）
-- 新しいAgentを追加する場合: ① 本ドキュメントの一覧表・RACI・Workflow Integrationを更新 → ② `templates/Agent_Base_Template.md` 準拠の定義ファイルを `agents/` に作成
+- 新しいAgentを追加する場合: ① 本ドキュメントの一覧表・RACI・Workflow Integrationを更新 → ② [`Agent_Base_Template.md`](./Agent_Base_Template.md) 準拠の定義ファイルを `agents/` に作成
 - 各Agentの詳細定義ファイル（`agents/` 配下）と本ドキュメントが矛盾した場合、本ドキュメントを正とする
 
 ---
