@@ -2,17 +2,18 @@
 
 | 項目 | 内容 |
 |---|---|
-| Version | 1.0.0 |
+| Version | 1.1.0 |
 | Status | Active — 蓄積・制作テンプレート |
 | Last Updated | 2026-09-29 |
 
 参考HPと再利用テンプレートを蓄積する場所。依頼の「hp templete fail」はこの `hp_template/` として用意した。
-参考サイトのURLはまだ受領していないため、実在サイトの推薦や架空の分析結果は登録していない。
+ユーザー指定の7サイトを [初回デザイン参考集](references/design-collection.md) に登録済み。ページ構成の観察と自社への応用案を分け、実画面の視覚確認は未実施として管理する。
 
 ## 保存先
 
 | 保存先 | 用途 |
 |---|---|
+| [references/design-collection.md](references/design-collection.md) | 初回登録7サイトの閲覧用一覧・応用案 |
 | [references/reference-entry.md](references/reference-entry.md) | 参考HPを観察・比較する書式 |
 | [templates/site-brief.md](templates/site-brief.md) | HPの目的・顧客・要件・計測 |
 | [templates/service-site/](templates/service-site/README.md) | 編集できるHTML/CSSのサービスHP |
@@ -49,4 +50,5 @@
 
 | Version | Date | Change |
 |---|---|---|
+| 1.1.0 | 2026-09-29 | ユーザー指定7サイトを台帳・閲覧用参考集に登録 |
 | 1.0.0 | 2026-09-29 | 参考登録、3用途の雛形、HTML/CSSスターター、QAを追加 |
