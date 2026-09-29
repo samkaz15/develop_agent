@@ -1,0 +1,17 @@
+[
+  {
+    "id": "decision-new",
+    "type": "decision",
+    "title": "{{TITLE}}",
+    "status": "draft",
+    "evidence": "unknown",
+    "source": "{{SOURCE_URL_OR_DOCUMENT}}",
+    "updated_on": null,
+    "project_ids": [],
+    "options": null,
+    "decision": null,
+    "reason": null,
+    "owner": null,
+    "review_date": null
+  }
+]

@@ -6,9 +6,9 @@ AIサービス・Webサービス・SaaS・モバイルアプリ・AIエージェ
 
 | 項目 | 内容 |
 |---|---|
-| **Version** | 1.0.0 |
-| **Status** | Active（設計層完成・実行層構築中） |
-| **Last Updated** | 2026-07-10 |
+| **Version** | 1.1.0 |
+| **Status** | Active（設計層＋起業/HP制作の初期実行基盤） |
+| **Last Updated** | 2026-09-29 |
 
 ---
 
@@ -69,6 +69,24 @@ develop_agent/
 
 ## 使い方（Quick Start）
 
+### スタートアップ・HP制作から始める
+
+- **事業情報を蓄積する**: [Startup Package](startup/README.md)。依頼に基づく初期台帳、事業ブリーフ、KPI・作業・判断・学びの書式と検証CLI。
+- **参考HP・テンプレートを増やす**: [HP Template Library](hp_template/README.md)。参考サイト登録、サービスHPのHTML/CSS、LP・記事サイトの構成書式。
+- **クリエイティブを改善する**: [Creative Improvement](design/creative/README.md)。制作→計測→実験→学び→テンプレート更新。
+- **AIに一貫して作業させる**: [起業からHP制作までのプロンプト](prompts/startup-to-website.md)。
+
+```bash
+python startup/tools/workspace.py validate startup/data/initial-business/registry.json
+python startup/tools/workspace.py review startup/data/initial-business/registry.json
+python -m unittest discover -s startup/tests -v
+```
+
+Python 3.10以降・追加依存なし。現在は手動入力＋実行時レビューで、常駐Agentや外部サービス連携は未実装。
+添付の全体構想は[要件原本](docs/entrepreneur-agent-request.md)、今回の実装範囲は[計画](docs/startup-foundation-plan.md)を参照。
+
+### 既存開発OSを使う
+
 1. **OSを理解する**: `00_System/Development_Workflow.md`（プロセス）→ `Agent_Architecture.md`（組織）→ `Quality_Standard.md`（基準）の順に読む
 2. **新規プロジェクトを始める**: `00_System/Project_Template.md` の Initialization Flow に従って初期化する
 3. **要件定義を行う**: `templates/Requirement_Template.md` をコピーし、`01_Product/Requirement_Engineering_Framework.md` の20ステージを進める（Gate A〜Dは人間が判定）
@@ -90,3 +108,10 @@ develop_agent/
 - [ ] Platform P0 Domain（Deployment / Security / Monitoring）の詳細設計
 
 詳細な依存関係と優先順位は [`01_Product/Requirement_Engineering_Framework.md`](./01_Product/Requirement_Engineering_Framework.md) の「Agent一覧（作成計画）」を参照。
+
+## Version Management
+
+| Version | Date | Change |
+|---|---|---|
+| 1.1.0 | 2026-09-29 | 起業情報・HP資産・クリエイティブ改善とローカル検証基盤を追加 |
+| 1.0.0 | 2026-07-10 | 開発OSの設計基盤 |

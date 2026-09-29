@@ -1,0 +1,14 @@
+[
+  {
+    "id": "strategy-new",
+    "type": "strategy",
+    "title": "{{TITLE}}",
+    "status": "draft",
+    "evidence": "unknown",
+    "source": "{{SOURCE_URL_OR_DOCUMENT}}",
+    "updated_on": null,
+    "company_ids": [],
+    "objectives": null,
+    "frameworks": null
+  }
+]

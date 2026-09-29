@@ -1,0 +1,16 @@
+[
+  {
+    "id": "reference-new",
+    "type": "reference",
+    "title": "{{TITLE}}",
+    "status": "draft",
+    "evidence": "unknown",
+    "source": "{{SOURCE_URL_OR_DOCUMENT}}",
+    "updated_on": null,
+    "url": null,
+    "observed_on": null,
+    "sections": null,
+    "adoption_reason": null,
+    "rights": null
+  }
+]

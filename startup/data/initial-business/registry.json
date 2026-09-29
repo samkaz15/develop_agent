@@ -1,0 +1,731 @@
+{
+  "schema_version": 1,
+  "workspace": "initial-marketing-business",
+  "records": [
+    {
+      "id": "company-marketing",
+      "type": "company",
+      "title": "マーケティング支援事業の初期構想",
+      "status": "draft",
+      "evidence": "hypothesis",
+      "source": "User request, 2026-09-29",
+      "updated_on": "2026-09-29",
+      "mission": "事業設計から施策実行・計測・改善まで一貫して支援する",
+      "customer": null,
+      "value_proposition": "事業情報と制作・改善の知見を蓄積し、再利用できる形にする",
+      "revenue_model": null,
+      "unknowns": [
+        "会社名・提供サービスの範囲",
+        "最初の顧客と解決課題",
+        "価格・原価・予算",
+        "KGI/KPI目標・担当者・納期"
+      ]
+    },
+    {
+      "id": "strategy-initial",
+      "type": "strategy",
+      "title": "最初の顧客価値を検証する",
+      "status": "draft",
+      "evidence": "hypothesis",
+      "source": "User request, 2026-09-29",
+      "updated_on": "2026-09-29",
+      "company_ids": [
+        "company-marketing"
+      ],
+      "objectives": [
+        "顧客課題と提供価値を確定",
+        "HPで価値を説明",
+        "計測からクリエイティブ改善を行う"
+      ],
+      "frameworks": [
+        "Lean Canvas",
+        "ICP/JTBD",
+        "KPI tree",
+        "Build-Measure-Learn"
+      ]
+    },
+    {
+      "id": "kpi-qualified-inquiries",
+      "type": "kpi",
+      "title": "有効問い合わせ件数",
+      "status": "draft",
+      "evidence": "unknown",
+      "source": "User request, 2026-09-29",
+      "updated_on": "2026-09-29",
+      "company_ids": [
+        "company-marketing"
+      ],
+      "unit": "件/月",
+      "definition": "対象顧客・支援内容が適合する重複を除いた問い合わせ。適合条件は事業定義時に確定する",
+      "direction": "higher",
+      "target": null,
+      "actual": null,
+      "measured_on": null
+    },
+    {
+      "id": "project-first-hp",
+      "type": "project",
+      "title": "最初の事業HP制作",
+      "status": "draft",
+      "evidence": "hypothesis",
+      "source": "User request, 2026-09-29",
+      "updated_on": "2026-09-29",
+      "company_ids": [
+        "company-marketing"
+      ],
+      "kpi_ids": [
+        "kpi-qualified-inquiries"
+      ],
+      "deadline": null,
+      "required_finish": null,
+      "forecast": null,
+      "scope": [
+        "事業ブリーフ",
+        "参考HP分析",
+        "ページ構成",
+        "コピー・デザイン",
+        "実装",
+        "計測・QA",
+        "改善実験"
+      ],
+      "reference_ids": [
+        "reference-feel-design",
+        "reference-asahi-jewelry",
+        "reference-nichi-nichi-ka",
+        "reference-rebita",
+        "reference-hp-zbook-studio",
+        "reference-polkastarter",
+        "reference-apple-iphone"
+      ]
+    },
+    {
+      "id": "template-service-v1",
+      "type": "website_template",
+      "title": "サービスHPスターター",
+      "status": "draft",
+      "evidence": "hypothesis",
+      "source": "User request, 2026-09-29",
+      "updated_on": "2026-09-29",
+      "path": "hp_template/templates/service-site/index.html",
+      "version": "1.0.0",
+      "use_case": "事業説明と相談導線の設計",
+      "reference_ids": [],
+      "acceptance": [
+        "事業・顧客・提供価値が伝わる",
+        "根拠のない実績を掲載しない",
+        "相談リンクを実URLに置換",
+        "モバイルとキーボード操作を確認"
+      ]
+    },
+    {
+      "id": "task-brief",
+      "type": "task",
+      "title": "事業ブリーフを記入し未確認事項を決める",
+      "status": "draft",
+      "evidence": "hypothesis",
+      "source": "User request, 2026-09-29",
+      "updated_on": "2026-09-29",
+      "project_ids": [
+        "project-first-hp"
+      ],
+      "kpi_ids": [
+        "kpi-qualified-inquiries"
+      ],
+      "depends_on": [],
+      "owner": null,
+      "reviewer": null,
+      "due_date": null,
+      "priority": "P1",
+      "progress": 0,
+      "estimated_hours": null,
+      "actual_hours": null,
+      "definition_of_done": "startup/templates/business-brief.md の必須項目と承認記録が埋まる",
+      "deliverable": null
+    },
+    {
+      "id": "task-references",
+      "type": "task",
+      "title": "参考HPを登録し採用する構成を選ぶ",
+      "status": "draft",
+      "evidence": "hypothesis",
+      "source": "User request, 2026-09-29",
+      "updated_on": "2026-09-29",
+      "project_ids": [
+        "project-first-hp"
+      ],
+      "kpi_ids": [
+        "kpi-qualified-inquiries"
+      ],
+      "depends_on": [
+        "task-brief"
+      ],
+      "owner": null,
+      "reviewer": null,
+      "due_date": null,
+      "priority": "P1",
+      "progress": 0,
+      "estimated_hours": null,
+      "actual_hours": null,
+      "definition_of_done": "参考URL・観察日・採用理由・権利を記録する",
+      "deliverable": null,
+      "notes": "2026-09-29: ユーザー指定7サイトを参考候補として登録。ページ構成を確認済み。視覚確認・採用箇所の決定は未完了。",
+      "reference_ids": [
+        "reference-feel-design",
+        "reference-asahi-jewelry",
+        "reference-nichi-nichi-ka",
+        "reference-rebita",
+        "reference-hp-zbook-studio",
+        "reference-polkastarter",
+        "reference-apple-iphone"
+      ]
+    },
+    {
+      "id": "task-requirements",
+      "type": "task",
+      "title": "HP要件とサイトマップを確定",
+      "status": "draft",
+      "evidence": "hypothesis",
+      "source": "User request, 2026-09-29",
+      "updated_on": "2026-09-29",
+      "project_ids": [
+        "project-first-hp"
+      ],
+      "kpi_ids": [
+        "kpi-qualified-inquiries"
+      ],
+      "depends_on": [
+        "task-references"
+      ],
+      "owner": null,
+      "reviewer": null,
+      "due_date": null,
+      "priority": "P1",
+      "progress": 0,
+      "estimated_hours": null,
+      "actual_hours": null,
+      "definition_of_done": "要件ID・受入条件・KPI・対象外を確定する",
+      "deliverable": null
+    },
+    {
+      "id": "task-creative",
+      "type": "task",
+      "title": "コピーとビジュアル案を制作",
+      "status": "draft",
+      "evidence": "hypothesis",
+      "source": "User request, 2026-09-29",
+      "updated_on": "2026-09-29",
+      "project_ids": [
+        "project-first-hp"
+      ],
+      "kpi_ids": [
+        "kpi-qualified-inquiries"
+      ],
+      "depends_on": [
+        "task-requirements"
+      ],
+      "owner": null,
+      "reviewer": null,
+      "due_date": null,
+      "priority": "P1",
+      "progress": 0,
+      "estimated_hours": null,
+      "actual_hours": null,
+      "definition_of_done": "訴求・CTA・根拠・モバイル構成のレビュー完了",
+      "deliverable": null
+    },
+    {
+      "id": "task-implement",
+      "type": "task",
+      "title": "HP実装と計測設定",
+      "status": "draft",
+      "evidence": "hypothesis",
+      "source": "User request, 2026-09-29",
+      "updated_on": "2026-09-29",
+      "project_ids": [
+        "project-first-hp"
+      ],
+      "kpi_ids": [
+        "kpi-qualified-inquiries"
+      ],
+      "depends_on": [
+        "task-creative"
+      ],
+      "owner": null,
+      "reviewer": null,
+      "due_date": null,
+      "priority": "P1",
+      "progress": 0,
+      "estimated_hours": null,
+      "actual_hours": null,
+      "definition_of_done": "承認済み要件を実装しテスト記録を残す",
+      "deliverable": null
+    },
+    {
+      "id": "task-qa",
+      "type": "task",
+      "title": "表示・導線・計測を確認",
+      "status": "draft",
+      "evidence": "hypothesis",
+      "source": "User request, 2026-09-29",
+      "updated_on": "2026-09-29",
+      "project_ids": [
+        "project-first-hp"
+      ],
+      "kpi_ids": [
+        "kpi-qualified-inquiries"
+      ],
+      "depends_on": [
+        "task-implement"
+      ],
+      "owner": null,
+      "reviewer": null,
+      "due_date": null,
+      "priority": "P1",
+      "progress": 0,
+      "estimated_hours": null,
+      "actual_hours": null,
+      "definition_of_done": "hp_template/checklists/release.md の対象項目を証跡付きで確認",
+      "deliverable": null
+    },
+    {
+      "id": "task-measure",
+      "type": "task",
+      "title": "公開承認後に結果を計測",
+      "status": "draft",
+      "evidence": "hypothesis",
+      "source": "User request, 2026-09-29",
+      "updated_on": "2026-09-29",
+      "project_ids": [
+        "project-first-hp"
+      ],
+      "kpi_ids": [
+        "kpi-qualified-inquiries"
+      ],
+      "depends_on": [
+        "task-qa"
+      ],
+      "owner": null,
+      "reviewer": null,
+      "due_date": null,
+      "priority": "P1",
+      "progress": 0,
+      "estimated_hours": null,
+      "actual_hours": null,
+      "definition_of_done": "対象期間・分母・流入・版番号を記録",
+      "deliverable": null
+    },
+    {
+      "id": "task-improve",
+      "type": "task",
+      "title": "改善実験と学びを蓄積",
+      "status": "draft",
+      "evidence": "hypothesis",
+      "source": "User request, 2026-09-29",
+      "updated_on": "2026-09-29",
+      "project_ids": [
+        "project-first-hp"
+      ],
+      "kpi_ids": [
+        "kpi-qualified-inquiries"
+      ],
+      "depends_on": [
+        "task-measure"
+      ],
+      "owner": null,
+      "reviewer": null,
+      "due_date": null,
+      "priority": "P1",
+      "progress": 0,
+      "estimated_hours": null,
+      "actual_hours": null,
+      "definition_of_done": "実験結果・判断・適用条件・次アクションが接続する",
+      "deliverable": null
+    },
+    {
+      "id": "reference-feel-design",
+      "type": "reference",
+      "title": "FEEL DESIGN",
+      "status": "registered",
+      "evidence": "fact",
+      "source": "https://feel-design.jp/",
+      "updated_on": "2026-09-29",
+      "url": "https://feel-design.jp/",
+      "submitted_url": "https://feel-design.jp/",
+      "observed_on": "2026-09-29",
+      "sections": [
+        "顧客の悩み、支援内容、料金プラン、実績、顧客の声、相談へのリンクを確認。"
+      ],
+      "adoption_reason": "事業HPの情報設計の候補。サービス説明から相談までの理解を補助する仮説。",
+      "rights": "参考リンクと独自の分析のみ登録。画像・動画・ロゴ・ソースコードは未取得/未転用。素材の利用許諾は未確認。",
+      "selection_source": "User-selected reference, 2026-09-29",
+      "category": "制作会社・サービスサイト",
+      "tags": [
+        "service",
+        "agency",
+        "case-studies"
+      ],
+      "proposed_patterns": [
+        "課題整理からサービス説明・根拠・相談へつなぐ情報設計",
+        "実績を入口に、必要な支援へ誘導する構成"
+      ],
+      "suggested_use_cases": [
+        "マーケティング支援会社のHP",
+        "制作サービスの相談獲得"
+      ],
+      "adoption_status": "candidate",
+      "proposal_evidence": "hypothesis",
+      "inspection": {
+        "method": "web page text extraction",
+        "structure": "reviewed",
+        "visual": "pending",
+        "mobile": "pending",
+        "motion": "pending",
+        "screenshot_path": null
+      },
+      "pending_checks": [
+        "実画面の配色・タイポグラフィ・余白・写真トリミング",
+        "PC/モバイルのレイアウトとナビゲーション",
+        "スクロール・ホバー・切替の動き",
+        "ユーザーが特に採用したい部分の選定"
+      ],
+      "performance_evidence": null,
+      "project_ids": [
+        "project-first-hp"
+      ]
+    },
+    {
+      "id": "reference-asahi-jewelry",
+      "type": "reference",
+      "title": "ASAHI JEWELRY",
+      "status": "registered",
+      "evidence": "fact",
+      "source": "https://asahijewelry.com/",
+      "updated_on": "2026-09-29",
+      "url": "https://asahijewelry.com/",
+      "submitted_url": "https://asahijewelry.com/",
+      "observed_on": "2026-09-29",
+      "sections": [
+        "商品をアイテム別・素材別に探す導線、ブランド紹介、おすすめ、購入案内、アフターサービス、店舗・問い合わせを確認。"
+      ],
+      "adoption_reason": "商品世界観とカテゴリ探索を両立する構成の候補。",
+      "rights": "参考リンクと独自の分析のみ登録。画像・動画・ロゴ・ソースコードは未取得/未転用。素材の利用許諾は未確認。",
+      "selection_source": "User-selected reference, 2026-09-29",
+      "category": "ジュエリー・ブランド/商品カタログ",
+      "tags": [
+        "brand",
+        "catalog",
+        "retail"
+      ],
+      "proposed_patterns": [
+        "ブランドの物語と商品を探す導線を組み合わせる",
+        "商品紹介の後に購入方法・来店相談への不安を解消する"
+      ],
+      "suggested_use_cases": [
+        "ブランド紹介",
+        "ジュエリー・物販カタログ"
+      ],
+      "adoption_status": "candidate",
+      "proposal_evidence": "hypothesis",
+      "inspection": {
+        "method": "web page text extraction",
+        "structure": "reviewed",
+        "visual": "pending",
+        "mobile": "pending",
+        "motion": "pending",
+        "screenshot_path": null
+      },
+      "pending_checks": [
+        "実画面の配色・タイポグラフィ・余白・写真トリミング",
+        "PC/モバイルのレイアウトとナビゲーション",
+        "スクロール・ホバー・切替の動き",
+        "ユーザーが特に採用したい部分の選定"
+      ],
+      "performance_evidence": null,
+      "project_ids": [
+        "project-first-hp"
+      ]
+    },
+    {
+      "id": "reference-nichi-nichi-ka",
+      "type": "reference",
+      "title": "nichi-nichi-ka",
+      "status": "registered",
+      "evidence": "fact",
+      "source": "https://www.nichi-nichi-ka.jp/",
+      "updated_on": "2026-09-29",
+      "url": "https://www.nichi-nichi-ka.jp/",
+      "submitted_url": "https://www.nichi-nichi-ka.jp/",
+      "observed_on": "2026-09-29",
+      "sections": [
+        "暮らしのコンセプト、住宅のガイドライン、タイプ・性能、ギャラリー、プラン・料金、資料請求への導線を確認。"
+      ],
+      "adoption_reason": "感性的な価値から具体的な提供条件へ接続する構成の候補。",
+      "rights": "参考リンクと独自の分析のみ登録。画像・動画・ロゴ・ソースコードは未取得/未転用。素材の利用許諾は未確認。",
+      "selection_source": "User-selected reference, 2026-09-29",
+      "category": "住宅・ライフスタイル",
+      "tags": [
+        "lifestyle",
+        "concept",
+        "gallery"
+      ],
+      "proposed_patterns": [
+        "顧客が求める生活から入り、選択肢・仕様・条件へ説明を進める",
+        "事例を探す入口と資料請求を分ける"
+      ],
+      "suggested_use_cases": [
+        "暮らしや体験を伝えるサービス",
+        "写真と事例を使うブランドサイト"
+      ],
+      "adoption_status": "candidate",
+      "proposal_evidence": "hypothesis",
+      "inspection": {
+        "method": "web page text extraction",
+        "structure": "reviewed",
+        "visual": "pending",
+        "mobile": "pending",
+        "motion": "pending",
+        "screenshot_path": null
+      },
+      "pending_checks": [
+        "実画面の配色・タイポグラフィ・余白・写真トリミング",
+        "PC/モバイルのレイアウトとナビゲーション",
+        "スクロール・ホバー・切替の動き",
+        "ユーザーが特に採用したい部分の選定"
+      ],
+      "performance_evidence": null,
+      "project_ids": [
+        "project-first-hp"
+      ]
+    },
+    {
+      "id": "reference-rebita",
+      "type": "reference",
+      "title": "ReBITA",
+      "status": "registered",
+      "evidence": "fact",
+      "source": "https://www.rebita.co.jp/",
+      "updated_on": "2026-09-29",
+      "url": "https://www.rebita.co.jp/",
+      "submitted_url": "https://www.rebita.co.jp/",
+      "observed_on": "2026-09-29",
+      "sections": [
+        "ビジョン、用途別ソリューション、個別プロジェクト、運営施設、働く人、ストーリー、ニュースへの導線を確認。"
+      ],
+      "adoption_reason": "マーケティング会社が支援領域を増やした際の情報整理の候補。",
+      "rights": "参考リンクと独自の分析のみ登録。画像・動画・ロゴ・ソースコードは未取得/未転用。素材の利用許諾は未確認。",
+      "selection_source": "User-selected reference, 2026-09-29",
+      "category": "企業・多事業/プロジェクト紹介",
+      "tags": [
+        "corporate",
+        "portfolio",
+        "multi-service"
+      ],
+      "proposed_patterns": [
+        "共通の理念を軸に複数事業を整理する",
+        "プロジェクトと人の情報で実際の活動を伝える"
+      ],
+      "suggested_use_cases": [
+        "複数サービスを扱う企業HP",
+        "実績・チーム・採用の統合"
+      ],
+      "adoption_status": "candidate",
+      "proposal_evidence": "hypothesis",
+      "inspection": {
+        "method": "web page text extraction",
+        "structure": "reviewed",
+        "visual": "pending",
+        "mobile": "pending",
+        "motion": "pending",
+        "screenshot_path": null
+      },
+      "pending_checks": [
+        "実画面の配色・タイポグラフィ・余白・写真トリミング",
+        "PC/モバイルのレイアウトとナビゲーション",
+        "スクロール・ホバー・切替の動き",
+        "ユーザーが特に採用したい部分の選定"
+      ],
+      "performance_evidence": null,
+      "project_ids": [
+        "project-first-hp"
+      ]
+    },
+    {
+      "id": "reference-hp-zbook-studio",
+      "type": "reference",
+      "title": "HP ZBook Studio",
+      "status": "registered",
+      "evidence": "fact",
+      "source": "https://www.hp.com/us-en/workstations/zbook-studio.html",
+      "updated_on": "2026-09-29",
+      "url": "https://www.hp.com/us-en/workstations/zbook-studio.html",
+      "submitted_url": "https://www.hp.com/us-en/workstations/zbook-studio.html",
+      "observed_on": "2026-09-29",
+      "sections": [
+        "仕様・端子・画面・用途へのページ内リンク、製品紹介、性能説明、資料ダウンロード、購入と営業相談を確認。"
+      ],
+      "adoption_reason": "専門的な内容を、利用価値と具体的な仕様に分けて説明する構成の候補。",
+      "rights": "参考リンクと独自の分析のみ登録。画像・動画・ロゴ・ソースコードは未取得/未転用。素材の利用許諾は未確認。",
+      "selection_source": "User-selected reference, 2026-09-29",
+      "category": "製品詳細・機能説明",
+      "tags": [
+        "product",
+        "features",
+        "specifications"
+      ],
+      "proposed_patterns": [
+        "価値の概要から機能・仕様の根拠へ段階的に説明する",
+        "購入と相談を検討段階に応じて分ける"
+      ],
+      "suggested_use_cases": [
+        "機能が多いサービスやSaaSの紹介",
+        "専門性を説明するLP"
+      ],
+      "adoption_status": "candidate",
+      "proposal_evidence": "hypothesis",
+      "inspection": {
+        "method": "web page text extraction",
+        "structure": "reviewed",
+        "visual": "pending",
+        "mobile": "pending",
+        "motion": "pending",
+        "screenshot_path": null
+      },
+      "pending_checks": [
+        "実画面の配色・タイポグラフィ・余白・写真トリミング",
+        "PC/モバイルのレイアウトとナビゲーション",
+        "スクロール・ホバー・切替の動き",
+        "ユーザーが特に採用したい部分の選定"
+      ],
+      "performance_evidence": null,
+      "project_ids": [
+        "project-first-hp"
+      ]
+    },
+    {
+      "id": "reference-polkastarter",
+      "type": "reference",
+      "title": "Polkastarter",
+      "status": "registered",
+      "evidence": "fact",
+      "source": "https://polkastarter.com/",
+      "updated_on": "2026-09-29",
+      "url": "https://polkastarter.com/",
+      "submitted_url": "https://polkastarter.com/",
+      "observed_on": "2026-09-29",
+      "sections": [
+        "取得時点のトップはコレクティブルのマーケットプレイスを案内。プレビュー、参加先へのリンク、利用手順、特徴の説明を確認。"
+      ],
+      "adoption_reason": "新しい仕組みを説明し、利用開始までの理解を助ける構成の候補。旧版のローンチパッド向けデザインとは区別する。",
+      "rights": "参考リンクと独自の分析のみ登録。画像・動画・ロゴ・ソースコードは未取得/未転用。素材の利用許諾は未確認。",
+      "selection_source": "User-selected reference, 2026-09-29",
+      "category": "マーケットプレイス・プロダクト紹介",
+      "tags": [
+        "marketplace",
+        "onboarding",
+        "product"
+      ],
+      "proposed_patterns": [
+        "利用体験のプレビューから具体的な参加行動へつなぐ",
+        "仕組みを少数の手順に整理する"
+      ],
+      "suggested_use_cases": [
+        "新サービスの参加促進",
+        "コミュニティ・マーケットプレイス"
+      ],
+      "adoption_status": "candidate",
+      "proposal_evidence": "hypothesis",
+      "inspection": {
+        "method": "web page text extraction",
+        "structure": "reviewed",
+        "visual": "pending",
+        "mobile": "pending",
+        "motion": "pending",
+        "screenshot_path": null
+      },
+      "pending_checks": [
+        "実画面の配色・タイポグラフィ・余白・写真トリミング",
+        "PC/モバイルのレイアウトとナビゲーション",
+        "スクロール・ホバー・切替の動き",
+        "ユーザーが特に採用したい部分の選定"
+      ],
+      "performance_evidence": null,
+      "project_ids": [
+        "project-first-hp"
+      ]
+    },
+    {
+      "id": "reference-apple-iphone",
+      "type": "reference",
+      "title": "Apple iPhone",
+      "status": "registered",
+      "evidence": "fact",
+      "source": "https://www.apple.com/jp/iphone/",
+      "updated_on": "2026-09-29",
+      "url": "https://www.apple.com/jp/iphone/",
+      "submitted_url": "https://www.apple.com/jp/iphone/?afid=p240%7Cgo~cmp-24228224592~adg-205678021168~ad-824958710777_kwd-2441064802743~dev-c~ext-~prd-~mca-~nt-search&cid=wwa-jp-kwgo-iphone-noncore_iphonefamily-iphonefamily_general-iphonefamily_hero_avail_091826-iPhone-iPhone_General",
+      "observed_on": "2026-09-29",
+      "sections": [
+        "製品群のナビゲーション、モデルごとの紹介と詳細・購入の導線、比較へのリンク、機能や乗り換えに関する説明を確認。"
+      ],
+      "adoption_reason": "商品やプランの違いを伝え、検討段階に合う次の行動を示す構成の候補。",
+      "rights": "参考リンクと独自の分析のみ登録。画像・動画・ロゴ・ソースコードは未取得/未転用。素材の利用許諾は未確認。",
+      "selection_source": "User-selected reference, 2026-09-29",
+      "category": "製品ファミリー・比較/購入",
+      "tags": [
+        "product-family",
+        "comparison",
+        "conversion"
+      ],
+      "proposed_patterns": [
+        "一つのメッセージと製品紹介を対応させる",
+        "詳しく知る・比較する・購入するを分ける"
+      ],
+      "suggested_use_cases": [
+        "主力商品を持つブランド",
+        "サービスプランの比較と選択"
+      ],
+      "adoption_status": "candidate",
+      "proposal_evidence": "hypothesis",
+      "inspection": {
+        "method": "web page text extraction",
+        "structure": "reviewed",
+        "visual": "pending",
+        "mobile": "pending",
+        "motion": "pending",
+        "screenshot_path": null
+      },
+      "pending_checks": [
+        "実画面の配色・タイポグラフィ・余白・写真トリミング",
+        "PC/モバイルのレイアウトとナビゲーション",
+        "スクロール・ホバー・切替の動き",
+        "ユーザーが特に採用したい部分の選定"
+      ],
+      "performance_evidence": null,
+      "project_ids": [
+        "project-first-hp"
+      ],
+      "normalization_note": "afid/cidは広告計測用として参照URLから除去。元のURLはsubmitted_urlで保持。"
+    }
+  ],
+  "audit": [
+    {
+      "at": "2026-09-29T12:48:36.894040+00:00",
+      "actor": "Codex",
+      "reason": "ユーザー指定の参考HP7件を登録。構造観察と応用仮説を分離し、HPプロジェクトに接続。",
+      "operation": "upsert",
+      "ids": [
+        "reference-feel-design",
+        "reference-asahi-jewelry",
+        "reference-nichi-nichi-ka",
+        "reference-rebita",
+        "reference-hp-zbook-studio",
+        "reference-polkastarter",
+        "reference-apple-iphone",
+        "project-first-hp",
+        "task-references"
+      ],
+      "before": "9e822acd8c475bde1cc1ccbe2c3f57d0ccd317ce88d3ebba7436e5ffdd78689a",
+      "after": "a9be9f2d917bd87ce86748d80982f53dc93428774f4fa123d9c243e51274c732"
+    }
+  ]
+}

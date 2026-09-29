@@ -1,0 +1,16 @@
+[
+  {
+    "id": "company-new",
+    "type": "company",
+    "title": "{{TITLE}}",
+    "status": "draft",
+    "evidence": "unknown",
+    "source": "{{SOURCE_URL_OR_DOCUMENT}}",
+    "updated_on": null,
+    "mission": null,
+    "customer": null,
+    "value_proposition": null,
+    "revenue_model": null,
+    "unknowns": null
+  }
+]

@@ -1,0 +1,15 @@
+[
+  {
+    "id": "valuation-new",
+    "type": "valuation",
+    "title": "{{TITLE}}",
+    "status": "draft",
+    "evidence": "unknown",
+    "source": "{{SOURCE_URL_OR_DOCUMENT}}",
+    "updated_on": null,
+    "company_ids": [],
+    "drivers": null,
+    "evidence_ids": [],
+    "limitations": null
+  }
+]

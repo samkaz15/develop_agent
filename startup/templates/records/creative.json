@@ -1,0 +1,20 @@
+[
+  {
+    "id": "creative-new",
+    "type": "creative",
+    "title": "{{TITLE}}",
+    "status": "draft",
+    "evidence": "unknown",
+    "source": "{{SOURCE_URL_OR_DOCUMENT}}",
+    "updated_on": null,
+    "project_ids": [],
+    "kpi_ids": [],
+    "reference_ids": [],
+    "template_ids": [],
+    "channel": null,
+    "message": null,
+    "cta": null,
+    "version": null,
+    "asset_path": null
+  }
+]

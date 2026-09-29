@@ -1,0 +1,16 @@
+[
+  {
+    "id": "risk-new",
+    "type": "risk",
+    "title": "{{TITLE}}",
+    "status": "draft",
+    "evidence": "unknown",
+    "source": "{{SOURCE_URL_OR_DOCUMENT}}",
+    "updated_on": null,
+    "project_ids": [],
+    "category": null,
+    "impact": null,
+    "mitigation": null,
+    "owner": null
+  }
+]

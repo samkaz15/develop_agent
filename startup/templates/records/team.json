@@ -1,0 +1,13 @@
+[
+  {
+    "id": "team-new",
+    "type": "team",
+    "title": "{{TITLE}}",
+    "status": "draft",
+    "evidence": "unknown",
+    "source": "{{SOURCE_URL_OR_DOCUMENT}}",
+    "updated_on": null,
+    "role": null,
+    "capacity_hours": null
+  }
+]

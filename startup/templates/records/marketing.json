@@ -1,0 +1,17 @@
+[
+  {
+    "id": "marketing-new",
+    "type": "marketing",
+    "title": "{{TITLE}}",
+    "status": "draft",
+    "evidence": "unknown",
+    "source": "{{SOURCE_URL_OR_DOCUMENT}}",
+    "updated_on": null,
+    "project_ids": [],
+    "kpi_ids": [],
+    "channel": null,
+    "offer": null,
+    "cta": null,
+    "budget": null
+  }
+]
