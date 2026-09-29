@@ -1,0 +1,23 @@
+[
+  {
+    "id": "task-new",
+    "type": "task",
+    "title": "{{TITLE}}",
+    "status": "draft",
+    "evidence": "unknown",
+    "source": "{{SOURCE_URL_OR_DOCUMENT}}",
+    "updated_on": null,
+    "project_ids": [],
+    "kpi_ids": [],
+    "depends_on": [],
+    "owner": null,
+    "reviewer": null,
+    "due_date": null,
+    "priority": "P2",
+    "progress": 0,
+    "estimated_hours": null,
+    "actual_hours": null,
+    "definition_of_done": null,
+    "deliverable": null
+  }
+]

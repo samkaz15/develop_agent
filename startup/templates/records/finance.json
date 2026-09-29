@@ -1,0 +1,16 @@
+[
+  {
+    "id": "finance-new",
+    "type": "finance",
+    "title": "{{TITLE}}",
+    "status": "draft",
+    "evidence": "unknown",
+    "source": "{{SOURCE_URL_OR_DOCUMENT}}",
+    "updated_on": null,
+    "company_ids": [],
+    "period": null,
+    "currency": null,
+    "metrics": null,
+    "assumptions": null
+  }
+]

@@ -1,0 +1,16 @@
+[
+  {
+    "id": "knowledge-new",
+    "type": "knowledge",
+    "title": "{{TITLE}}",
+    "status": "draft",
+    "evidence": "unknown",
+    "source": "{{SOURCE_URL_OR_DOCUMENT}}",
+    "updated_on": null,
+    "experiment_ids": [],
+    "evidence_ids": [],
+    "learning": null,
+    "applicability": null,
+    "next_action": null
+  }
+]

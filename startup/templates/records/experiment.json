@@ -1,0 +1,23 @@
+[
+  {
+    "id": "experiment-new",
+    "type": "experiment",
+    "title": "{{TITLE}}",
+    "status": "draft",
+    "evidence": "unknown",
+    "source": "{{SOURCE_URL_OR_DOCUMENT}}",
+    "updated_on": null,
+    "project_ids": [],
+    "kpi_ids": [],
+    "creative_ids": [],
+    "hypothesis": null,
+    "variable": null,
+    "control": null,
+    "treatment": null,
+    "start_date": null,
+    "end_date": null,
+    "sample_plan": null,
+    "result": null,
+    "decision": null
+  }
+]

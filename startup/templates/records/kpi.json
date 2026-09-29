@@ -1,0 +1,18 @@
+[
+  {
+    "id": "kpi-new",
+    "type": "kpi",
+    "title": "{{TITLE}}",
+    "status": "draft",
+    "evidence": "unknown",
+    "source": "{{SOURCE_URL_OR_DOCUMENT}}",
+    "updated_on": null,
+    "company_ids": [],
+    "unit": null,
+    "definition": null,
+    "direction": "higher",
+    "target": null,
+    "actual": null,
+    "measured_on": null
+  }
+]

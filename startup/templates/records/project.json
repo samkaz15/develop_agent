@@ -1,0 +1,17 @@
+[
+  {
+    "id": "project-new",
+    "type": "project",
+    "title": "{{TITLE}}",
+    "status": "draft",
+    "evidence": "unknown",
+    "source": "{{SOURCE_URL_OR_DOCUMENT}}",
+    "updated_on": null,
+    "company_ids": [],
+    "kpi_ids": [],
+    "deadline": null,
+    "required_finish": null,
+    "forecast": null,
+    "scope": null
+  }
+]

@@ -7,9 +7,9 @@
 
 | 項目 | 内容 |
 |---|---|
-| **Version** | 1.0.0 |
+| **Version** | 1.1.0 |
 | **Status** | Active |
-| **Last Updated** | 2026-07-10 |
+| **Last Updated** | 2026-09-29 |
 
 ---
 
@@ -76,10 +76,18 @@ flowchart TD
 | AI実装標準 | `ai/README.md` | AI機能の全作業 |
 | エンジニアリング実行標準・Git規約 | `engineering/README.md` | 全実装作業 |
 | リポジトリ構造・配置 | 本書 | 全ドキュメント |
+| 起業情報の登録・検証手順 | `startup/README.md` | 起業・運営・改善作業 |
+| 事業ごとの構造化情報 | `startup/data/{business}/registry.json` | 各Agent・案件文書。サンプルは集計対象外 |
+| HP参考資料・制作テンプレート | `hp_template/README.md` | HP/LP制作・クリエイティブ改善 |
+| クリエイティブの改善運用 | `design/creative/README.md` | Growth・Design・HP制作 |
 
 ---
 
 ## 4. Package標準構造
+
+`startup/` は無番号の共有Package。`data/` は事業ごとの台帳、`tools/` はローカル実行、`schemas/` は入力契約、`tests/` は検証に使用する。
+`hp_template/` はユーザー指定名称を正規化した無番号Package（アンダースコアを許容）。参考分析書式は `references/`、再利用するHTML/CSSと構成書式は `templates/` に配置する。外部HPのURL索引は事業台帳を正本とする。
+実案件の成果物は既存Workflow置き場または案件リポジトリに置き、共通テンプレートと混在させない。
 
 新しい共有資産Packageを作る場合、以下の構造に従う（`platform/` `design/` `ai/` `engineering/` と同一）:
 
@@ -123,6 +131,7 @@ flowchart TD
 
 | Version | 日付 | 変更内容 | 担当 |
 |---|---|---|---|
+| 1.1.0 | 2026-09-29 | startup・hp_template・creativeの正本と配置を追加 | Codex |
 | 1.0.0 | 2026-07-10 | 初版作成（3分類・配置判定フロー・命名規則・正本マップ・Package標準構造。番号付きディレクトリの新設凍結を規約化） | Claude Code + Owner |
 
 ---

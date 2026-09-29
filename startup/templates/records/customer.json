@@ -1,0 +1,16 @@
+[
+  {
+    "id": "customer-new",
+    "type": "customer",
+    "title": "{{TITLE}}",
+    "status": "draft",
+    "evidence": "unknown",
+    "source": "{{SOURCE_URL_OR_DOCUMENT}}",
+    "updated_on": null,
+    "company_ids": [],
+    "segment": null,
+    "jobs": null,
+    "pains": null,
+    "gains": null
+  }
+]

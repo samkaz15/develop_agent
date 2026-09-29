@@ -1,0 +1,457 @@
+{
+  "schema_version": 1,
+  "workspace": "fictional-demo-only",
+  "records": [
+    {
+      "id": "company-marketing",
+      "type": "company",
+      "title": "架空サンプル: B2B制作支援",
+      "status": "draft",
+      "evidence": "sample",
+      "source": "Fictional end-to-end example; not operating results",
+      "updated_on": "2026-09-29",
+      "mission": "事業設計から施策実行・計測・改善まで一貫して支援する",
+      "customer": "架空の小規模B2B企業",
+      "value_proposition": "事業情報と制作・改善の知見を蓄積し、再利用できる形にする",
+      "revenue_model": "架空の月次制作支援",
+      "unknowns": [
+        "会社名・提供サービスの範囲",
+        "最初の顧客と解決課題",
+        "価格・原価・予算",
+        "KGI/KPI目標・担当者・納期"
+      ]
+    },
+    {
+      "id": "strategy-initial",
+      "type": "strategy",
+      "title": "最初の顧客価値を検証する",
+      "status": "draft",
+      "evidence": "sample",
+      "source": "Fictional end-to-end example; not operating results",
+      "updated_on": "2026-09-29",
+      "company_ids": [
+        "company-marketing"
+      ],
+      "objectives": [
+        "顧客課題と提供価値を確定",
+        "HPで価値を説明",
+        "計測からクリエイティブ改善を行う"
+      ],
+      "frameworks": [
+        "Lean Canvas",
+        "ICP/JTBD",
+        "KPI tree",
+        "Build-Measure-Learn"
+      ]
+    },
+    {
+      "id": "kpi-qualified-inquiries",
+      "type": "kpi",
+      "title": "有効問い合わせ件数",
+      "status": "draft",
+      "evidence": "sample",
+      "source": "Fictional end-to-end example; not operating results",
+      "updated_on": "2026-09-29",
+      "company_ids": [
+        "company-marketing"
+      ],
+      "unit": "件/月",
+      "definition": "対象顧客・支援内容が適合する重複を除いた問い合わせ。適合条件は事業定義時に確定する",
+      "direction": "higher",
+      "target": 10,
+      "actual": 6,
+      "measured_on": "2026-09-29"
+    },
+    {
+      "id": "project-first-hp",
+      "type": "project",
+      "title": "最初の事業HP制作",
+      "status": "draft",
+      "evidence": "sample",
+      "source": "Fictional end-to-end example; not operating results",
+      "updated_on": "2026-09-29",
+      "company_ids": [
+        "company-marketing"
+      ],
+      "kpi_ids": [
+        "kpi-qualified-inquiries"
+      ],
+      "deadline": "2026-10-10",
+      "required_finish": "2026-10-05",
+      "forecast": "2026-10-08",
+      "scope": [
+        "事業ブリーフ",
+        "参考HP分析",
+        "ページ構成",
+        "コピー・デザイン",
+        "実装",
+        "計測・QA",
+        "改善実験"
+      ]
+    },
+    {
+      "id": "template-service-v1",
+      "type": "website_template",
+      "title": "サービスHPスターター",
+      "status": "draft",
+      "evidence": "sample",
+      "source": "Fictional end-to-end example; not operating results",
+      "updated_on": "2026-09-29",
+      "path": "hp_template/templates/service-site/index.html",
+      "version": "1.0.0",
+      "use_case": "事業説明と相談導線の設計",
+      "reference_ids": [],
+      "acceptance": [
+        "事業・顧客・提供価値が伝わる",
+        "根拠のない実績を掲載しない",
+        "相談リンクを実URLに置換",
+        "モバイルとキーボード操作を確認"
+      ]
+    },
+    {
+      "id": "task-brief",
+      "type": "task",
+      "title": "事業ブリーフを記入し未確認事項を決める",
+      "status": "ready",
+      "evidence": "sample",
+      "source": "Fictional end-to-end example; not operating results",
+      "updated_on": "2026-09-29",
+      "project_ids": [
+        "project-first-hp"
+      ],
+      "kpi_ids": [
+        "kpi-qualified-inquiries"
+      ],
+      "depends_on": [],
+      "owner": "sample-producer",
+      "reviewer": "sample-reviewer",
+      "due_date": "2026-10-01",
+      "priority": "P1",
+      "progress": 0,
+      "estimated_hours": null,
+      "actual_hours": null,
+      "definition_of_done": "startup/templates/business-brief.md の必須項目と承認記録が埋まる",
+      "deliverable": null
+    },
+    {
+      "id": "task-references",
+      "type": "task",
+      "title": "参考HPを登録し採用する構成を選ぶ",
+      "status": "ready",
+      "evidence": "sample",
+      "source": "Fictional end-to-end example; not operating results",
+      "updated_on": "2026-09-29",
+      "project_ids": [
+        "project-first-hp"
+      ],
+      "kpi_ids": [
+        "kpi-qualified-inquiries"
+      ],
+      "depends_on": [
+        "task-brief"
+      ],
+      "owner": "sample-producer",
+      "reviewer": "sample-reviewer",
+      "due_date": "2026-10-01",
+      "priority": "P1",
+      "progress": 0,
+      "estimated_hours": null,
+      "actual_hours": null,
+      "definition_of_done": "参考URL・観察日・採用理由・権利を記録する",
+      "deliverable": null
+    },
+    {
+      "id": "task-requirements",
+      "type": "task",
+      "title": "HP要件とサイトマップを確定",
+      "status": "ready",
+      "evidence": "sample",
+      "source": "Fictional end-to-end example; not operating results",
+      "updated_on": "2026-09-29",
+      "project_ids": [
+        "project-first-hp"
+      ],
+      "kpi_ids": [
+        "kpi-qualified-inquiries"
+      ],
+      "depends_on": [
+        "task-references"
+      ],
+      "owner": "sample-producer",
+      "reviewer": "sample-reviewer",
+      "due_date": "2026-10-01",
+      "priority": "P1",
+      "progress": 0,
+      "estimated_hours": null,
+      "actual_hours": null,
+      "definition_of_done": "要件ID・受入条件・KPI・対象外を確定する",
+      "deliverable": null
+    },
+    {
+      "id": "task-creative",
+      "type": "task",
+      "title": "コピーとビジュアル案を制作",
+      "status": "ready",
+      "evidence": "sample",
+      "source": "Fictional end-to-end example; not operating results",
+      "updated_on": "2026-09-29",
+      "project_ids": [
+        "project-first-hp"
+      ],
+      "kpi_ids": [
+        "kpi-qualified-inquiries"
+      ],
+      "depends_on": [
+        "task-requirements"
+      ],
+      "owner": "sample-producer",
+      "reviewer": "sample-reviewer",
+      "due_date": "2026-10-01",
+      "priority": "P1",
+      "progress": 0,
+      "estimated_hours": null,
+      "actual_hours": null,
+      "definition_of_done": "訴求・CTA・根拠・モバイル構成のレビュー完了",
+      "deliverable": null
+    },
+    {
+      "id": "task-implement",
+      "type": "task",
+      "title": "HP実装と計測設定",
+      "status": "ready",
+      "evidence": "sample",
+      "source": "Fictional end-to-end example; not operating results",
+      "updated_on": "2026-09-29",
+      "project_ids": [
+        "project-first-hp"
+      ],
+      "kpi_ids": [
+        "kpi-qualified-inquiries"
+      ],
+      "depends_on": [
+        "task-creative"
+      ],
+      "owner": "sample-producer",
+      "reviewer": "sample-reviewer",
+      "due_date": "2026-10-01",
+      "priority": "P1",
+      "progress": 0,
+      "estimated_hours": null,
+      "actual_hours": null,
+      "definition_of_done": "承認済み要件を実装しテスト記録を残す",
+      "deliverable": null
+    },
+    {
+      "id": "task-qa",
+      "type": "task",
+      "title": "表示・導線・計測を確認",
+      "status": "ready",
+      "evidence": "sample",
+      "source": "Fictional end-to-end example; not operating results",
+      "updated_on": "2026-09-29",
+      "project_ids": [
+        "project-first-hp"
+      ],
+      "kpi_ids": [
+        "kpi-qualified-inquiries"
+      ],
+      "depends_on": [
+        "task-implement"
+      ],
+      "owner": "sample-producer",
+      "reviewer": "sample-reviewer",
+      "due_date": "2026-10-01",
+      "priority": "P1",
+      "progress": 0,
+      "estimated_hours": null,
+      "actual_hours": null,
+      "definition_of_done": "hp_template/checklists/release.md の対象項目を証跡付きで確認",
+      "deliverable": null
+    },
+    {
+      "id": "task-measure",
+      "type": "task",
+      "title": "公開承認後に結果を計測",
+      "status": "ready",
+      "evidence": "sample",
+      "source": "Fictional end-to-end example; not operating results",
+      "updated_on": "2026-09-29",
+      "project_ids": [
+        "project-first-hp"
+      ],
+      "kpi_ids": [
+        "kpi-qualified-inquiries"
+      ],
+      "depends_on": [
+        "task-qa"
+      ],
+      "owner": "sample-producer",
+      "reviewer": "sample-reviewer",
+      "due_date": "2026-10-01",
+      "priority": "P1",
+      "progress": 0,
+      "estimated_hours": null,
+      "actual_hours": null,
+      "definition_of_done": "対象期間・分母・流入・版番号を記録",
+      "deliverable": null
+    },
+    {
+      "id": "task-improve",
+      "type": "task",
+      "title": "改善実験と学びを蓄積",
+      "status": "ready",
+      "evidence": "sample",
+      "source": "Fictional end-to-end example; not operating results",
+      "updated_on": "2026-09-29",
+      "project_ids": [
+        "project-first-hp"
+      ],
+      "kpi_ids": [
+        "kpi-qualified-inquiries"
+      ],
+      "depends_on": [
+        "task-measure"
+      ],
+      "owner": "sample-producer",
+      "reviewer": "sample-reviewer",
+      "due_date": "2026-10-01",
+      "priority": "P1",
+      "progress": 0,
+      "estimated_hours": null,
+      "actual_hours": null,
+      "definition_of_done": "実験結果・判断・適用条件・次アクションが接続する",
+      "deliverable": null
+    },
+    {
+      "id": "reference-demo",
+      "type": "reference",
+      "title": "架空の構成メモ",
+      "status": "draft",
+      "evidence": "sample",
+      "source": "Fictional end-to-end example",
+      "updated_on": "2026-09-29",
+      "url": null,
+      "observed_on": null,
+      "sections": [
+        "対象顧客を見出しに明記"
+      ],
+      "adoption_reason": "顧客への適合を伝える仮説",
+      "rights": "自社制作の仮説。実在HPの複製なし"
+    },
+    {
+      "id": "creative-demo-v1",
+      "type": "creative",
+      "title": "架空の見出し改善案",
+      "status": "draft",
+      "evidence": "sample",
+      "source": "Fictional end-to-end example",
+      "updated_on": "2026-09-29",
+      "project_ids": [
+        "project-first-hp"
+      ],
+      "kpi_ids": [
+        "kpi-qualified-inquiries"
+      ],
+      "reference_ids": [
+        "reference-demo"
+      ],
+      "template_ids": [
+        "template-service-v1"
+      ],
+      "channel": "website",
+      "message": "対象顧客と成果物を具体化",
+      "cta": "相談内容を確認",
+      "version": "1.0.0",
+      "asset_path": "hp_template/templates/service-site/index.html"
+    },
+    {
+      "id": "experiment-demo",
+      "type": "experiment",
+      "title": "架空の見出し比較",
+      "status": "completed",
+      "evidence": "sample",
+      "source": "Fictional end-to-end example",
+      "updated_on": "2026-09-29",
+      "project_ids": [
+        "project-first-hp"
+      ],
+      "kpi_ids": [
+        "kpi-qualified-inquiries"
+      ],
+      "creative_ids": [
+        "creative-demo-v1"
+      ],
+      "hypothesis": "対象顧客の明記が有効問い合わせを増やす",
+      "variable": "見出し",
+      "control": "従来見出し",
+      "treatment": "顧客を明記",
+      "start_date": "2026-09-15",
+      "end_date": "2026-09-28",
+      "sample_plan": "説明用の仮の観測。検定はしていない",
+      "result": "架空: A 3件/100訪問、B 6件/100訪問。標本不足・確定効果ではない",
+      "decision": "continue"
+    },
+    {
+      "id": "knowledge-demo",
+      "type": "knowledge",
+      "title": "標本が不足しているため継続検証",
+      "status": "draft",
+      "evidence": "sample",
+      "source": "Fictional end-to-end example",
+      "updated_on": "2026-09-29",
+      "experiment_ids": [
+        "experiment-demo"
+      ],
+      "evidence_ids": [
+        "creative-demo-v1"
+      ],
+      "learning": "説明用サンプルでは結論を確定しない",
+      "applicability": "実データで同一期間・流入条件を比較する場合",
+      "next_action": "task-improve"
+    },
+    {
+      "id": "finance-demo",
+      "type": "finance",
+      "title": "架空の月次記録の構造",
+      "status": "draft",
+      "evidence": "sample",
+      "source": "Fictional end-to-end example",
+      "updated_on": "2026-09-29",
+      "company_ids": [
+        "company-marketing"
+      ],
+      "period": "2026-09",
+      "currency": "JPY",
+      "metrics": {
+        "revenue": null,
+        "cogs": null,
+        "opex": null,
+        "cash": null
+      },
+      "assumptions": [
+        "未入力。実験結果から売上を創作しない"
+      ]
+    },
+    {
+      "id": "valuation-demo",
+      "type": "valuation",
+      "title": "架空の価値ドライバー記録",
+      "status": "draft",
+      "evidence": "sample",
+      "source": "Fictional end-to-end example",
+      "updated_on": "2026-09-29",
+      "company_ids": [
+        "company-marketing"
+      ],
+      "drivers": [
+        "顧客獲得の再現性",
+        "制作知識の蓄積"
+      ],
+      "evidence_ids": [
+        "knowledge-demo"
+      ],
+      "limitations": "学びの記録であり企業価値の金額推定ではない"
+    }
+  ],
+  "audit": []
+}

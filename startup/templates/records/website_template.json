@@ -1,0 +1,16 @@
+[
+  {
+    "id": "website_template-new",
+    "type": "website_template",
+    "title": "{{TITLE}}",
+    "status": "draft",
+    "evidence": "unknown",
+    "source": "{{SOURCE_URL_OR_DOCUMENT}}",
+    "updated_on": null,
+    "path": null,
+    "version": null,
+    "use_case": null,
+    "reference_ids": [],
+    "acceptance": null
+  }
+]

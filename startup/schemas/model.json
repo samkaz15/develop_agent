@@ -1,0 +1,257 @@
+{
+  "version": 1,
+  "description": "Application contract; not a general JSON Schema. Validated by tools/workspace.py.",
+  "common_required": [
+    "id",
+    "type",
+    "title",
+    "status",
+    "evidence",
+    "source",
+    "updated_on"
+  ],
+  "evidence": [
+    "fact",
+    "hypothesis",
+    "unknown",
+    "sample"
+  ],
+  "date_fields": [
+    "updated_on",
+    "measured_on",
+    "start_date",
+    "due_date",
+    "end_date",
+    "deadline",
+    "required_finish",
+    "forecast",
+    "review_date",
+    "observed_on"
+  ],
+  "number_fields": [
+    "target",
+    "actual",
+    "progress",
+    "estimated_hours",
+    "actual_hours",
+    "capacity_hours",
+    "budget"
+  ],
+  "relations": {
+    "company_ids": [
+      "company"
+    ],
+    "project_ids": [
+      "project"
+    ],
+    "kpi_ids": [
+      "kpi"
+    ],
+    "depends_on": [
+      "task"
+    ],
+    "creative_ids": [
+      "creative"
+    ],
+    "template_ids": [
+      "website_template"
+    ],
+    "reference_ids": [
+      "reference"
+    ],
+    "experiment_ids": [
+      "experiment"
+    ],
+    "evidence_ids": [
+      "company",
+      "strategy",
+      "project",
+      "task",
+      "team",
+      "kpi",
+      "marketing",
+      "experiment",
+      "finance",
+      "risk",
+      "decision",
+      "valuation",
+      "customer",
+      "reference",
+      "website_template",
+      "creative",
+      "knowledge"
+    ]
+  },
+  "types": {
+    "company": {
+      "required": [
+        "mission",
+        "customer",
+        "value_proposition",
+        "revenue_model",
+        "unknowns"
+      ]
+    },
+    "strategy": {
+      "required": [
+        "company_ids",
+        "objectives",
+        "frameworks"
+      ]
+    },
+    "project": {
+      "required": [
+        "company_ids",
+        "kpi_ids",
+        "deadline",
+        "required_finish",
+        "forecast",
+        "scope"
+      ]
+    },
+    "task": {
+      "required": [
+        "project_ids",
+        "kpi_ids",
+        "depends_on",
+        "owner",
+        "reviewer",
+        "due_date",
+        "priority",
+        "progress",
+        "estimated_hours",
+        "actual_hours",
+        "definition_of_done",
+        "deliverable"
+      ]
+    },
+    "team": {
+      "required": [
+        "role",
+        "capacity_hours"
+      ]
+    },
+    "kpi": {
+      "required": [
+        "company_ids",
+        "unit",
+        "definition",
+        "direction",
+        "target",
+        "actual",
+        "measured_on"
+      ]
+    },
+    "marketing": {
+      "required": [
+        "project_ids",
+        "kpi_ids",
+        "channel",
+        "offer",
+        "cta",
+        "budget"
+      ]
+    },
+    "experiment": {
+      "required": [
+        "project_ids",
+        "kpi_ids",
+        "creative_ids",
+        "hypothesis",
+        "variable",
+        "control",
+        "treatment",
+        "start_date",
+        "end_date",
+        "sample_plan",
+        "result",
+        "decision"
+      ]
+    },
+    "finance": {
+      "required": [
+        "company_ids",
+        "period",
+        "currency",
+        "metrics",
+        "assumptions"
+      ]
+    },
+    "risk": {
+      "required": [
+        "project_ids",
+        "category",
+        "impact",
+        "mitigation",
+        "owner"
+      ]
+    },
+    "decision": {
+      "required": [
+        "project_ids",
+        "options",
+        "decision",
+        "reason",
+        "owner",
+        "review_date"
+      ]
+    },
+    "valuation": {
+      "required": [
+        "company_ids",
+        "drivers",
+        "evidence_ids",
+        "limitations"
+      ]
+    },
+    "customer": {
+      "required": [
+        "company_ids",
+        "segment",
+        "jobs",
+        "pains",
+        "gains"
+      ]
+    },
+    "reference": {
+      "required": [
+        "url",
+        "observed_on",
+        "sections",
+        "adoption_reason",
+        "rights"
+      ]
+    },
+    "website_template": {
+      "required": [
+        "path",
+        "version",
+        "use_case",
+        "reference_ids",
+        "acceptance"
+      ]
+    },
+    "creative": {
+      "required": [
+        "project_ids",
+        "kpi_ids",
+        "reference_ids",
+        "template_ids",
+        "channel",
+        "message",
+        "cta",
+        "version",
+        "asset_path"
+      ]
+    },
+    "knowledge": {
+      "required": [
+        "experiment_ids",
+        "evidence_ids",
+        "learning",
+        "applicability",
+        "next_action"
+      ]
+    }
+  }
+}
