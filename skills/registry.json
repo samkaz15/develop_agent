@@ -1,0 +1,245 @@
+{
+  "skills": [
+    {
+      "name": "self-analysis",
+      "category": "business",
+      "version": "1.0.0",
+      "status": "Draft",
+      "path": "skills/business/self-analysis/SKILL.md",
+      "tags": [
+        "launch",
+        "analysis",
+        "founder",
+        "swot",
+        "vrio"
+      ],
+      "related_agents": [
+        "business-launch",
+        "ceo"
+      ],
+      "depends_on": [],
+      "used_by": [
+        "business-launch"
+      ]
+    },
+    {
+      "name": "company-analysis",
+      "category": "business",
+      "version": "1.0.0",
+      "status": "Draft",
+      "path": "skills/business/company-analysis/SKILL.md",
+      "tags": [
+        "launch",
+        "analysis",
+        "competitor",
+        "benchmark"
+      ],
+      "related_agents": [
+        "business-launch",
+        "ceo",
+        "market-research",
+        "growth"
+      ],
+      "depends_on": [],
+      "used_by": [
+        "business-launch"
+      ]
+    },
+    {
+      "name": "capital-planning",
+      "category": "business",
+      "version": "1.0.0",
+      "status": "Draft",
+      "path": "skills/business/capital-planning/SKILL.md",
+      "tags": [
+        "launch",
+        "finance",
+        "capital",
+        "cashflow",
+        "runway"
+      ],
+      "related_agents": [
+        "business-launch",
+        "ceo"
+      ],
+      "depends_on": [
+        "business-strategy",
+        "payroll-design"
+      ],
+      "used_by": [
+        "business-launch"
+      ]
+    },
+    {
+      "name": "incorporation-legal",
+      "category": "business",
+      "version": "1.0.0",
+      "status": "Draft",
+      "path": "skills/business/incorporation-legal/SKILL.md",
+      "tags": [
+        "launch",
+        "legal",
+        "incorporation",
+        "compliance",
+        "filing"
+      ],
+      "related_agents": [
+        "business-launch",
+        "ceo",
+        "security"
+      ],
+      "depends_on": [
+        "capital-planning"
+      ],
+      "used_by": [
+        "business-launch"
+      ]
+    },
+    {
+      "name": "labor-management",
+      "category": "business",
+      "version": "1.0.0",
+      "status": "Draft",
+      "path": "skills/business/labor-management/SKILL.md",
+      "tags": [
+        "launch",
+        "labor",
+        "hr",
+        "social-insurance",
+        "regulations"
+      ],
+      "related_agents": [
+        "business-launch",
+        "ceo"
+      ],
+      "depends_on": [
+        "incorporation-legal"
+      ],
+      "used_by": [
+        "business-launch"
+      ]
+    },
+    {
+      "name": "payroll-design",
+      "category": "business",
+      "version": "1.0.0",
+      "status": "Draft",
+      "path": "skills/business/payroll-design/SKILL.md",
+      "tags": [
+        "launch",
+        "payroll",
+        "salary",
+        "executive-compensation",
+        "simulation"
+      ],
+      "related_agents": [
+        "business-launch",
+        "ceo"
+      ],
+      "depends_on": [
+        "capital-planning",
+        "labor-management"
+      ],
+      "used_by": [
+        "business-launch"
+      ]
+    },
+    {
+      "name": "subsidy-research",
+      "category": "business",
+      "version": "1.0.0",
+      "status": "Draft",
+      "path": "skills/business/subsidy-research/SKILL.md",
+      "tags": [
+        "launch",
+        "subsidy",
+        "grant",
+        "loan",
+        "regional"
+      ],
+      "related_agents": [
+        "business-launch",
+        "ceo",
+        "market-research"
+      ],
+      "depends_on": [],
+      "used_by": [
+        "business-launch"
+      ]
+    },
+    {
+      "name": "back-office-design",
+      "category": "business",
+      "version": "1.0.0",
+      "status": "Draft",
+      "path": "skills/business/back-office-design/SKILL.md",
+      "tags": [
+        "launch",
+        "back-office",
+        "tools",
+        "automation",
+        "accounting"
+      ],
+      "related_agents": [
+        "business-launch",
+        "ceo",
+        "security"
+      ],
+      "depends_on": [],
+      "used_by": [
+        "business-launch"
+      ]
+    },
+    {
+      "name": "launch-planning",
+      "category": "business",
+      "version": "1.0.0",
+      "status": "Draft",
+      "path": "skills/business/launch-planning/SKILL.md",
+      "tags": [
+        "launch",
+        "wbs",
+        "budget-actual",
+        "kpi",
+        "monthly-review"
+      ],
+      "related_agents": [
+        "business-launch",
+        "ceo",
+        "product-manager",
+        "growth"
+      ],
+      "depends_on": [
+        "capital-planning"
+      ],
+      "used_by": [
+        "business-launch"
+      ]
+    },
+    {
+      "name": "sns-marketing-framework",
+      "category": "growth",
+      "version": "1.0.0",
+      "status": "Draft",
+      "path": "skills/growth/sns-marketing-framework/SKILL.md",
+      "tags": [
+        "launch",
+        "sns",
+        "marketing",
+        "content",
+        "funnel"
+      ],
+      "related_agents": [
+        "business-launch",
+        "growth"
+      ],
+      "depends_on": [
+        "business-strategy",
+        "launch-planning"
+      ],
+      "used_by": [
+        "business-launch"
+      ]
+    }
+  ]
+}

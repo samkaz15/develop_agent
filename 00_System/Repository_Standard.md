@@ -7,9 +7,9 @@
 
 | 項目 | 内容 |
 |---|---|
-| **Version** | 1.0.0 |
+| **Version** | 1.1.0 |
 | **Status** | Active |
-| **Last Updated** | 2026-07-10 |
+| **Last Updated** | 2026-10-03 |
 
 ---
 
@@ -20,7 +20,7 @@
 | 分類 | 命名 | 内容 | 例 |
 |---|---|---|---|
 | **OS基盤** | `00_System/`＋`01_Product/` | プロセス・組織・能力・品質・要件定義の正本ドキュメント | `Development_Workflow.md` 等 |
-| **共有資産Package** | 無番号・小文字英語 | 全サービス横断で再利用する資産。`README.md` を正本とし、`templates/` `checklists/` `prompts/` `examples/` のサブ構造を持つ | `platform/` `design/` `ai/` `engineering/` `agents/` `skills/` `templates/` `prompts/` `examples/` `docs/` |
+| **共有資産Package** | 無番号・小文字英語 | 全サービス横断で再利用する資産。`README.md` を正本とし、`templates/` `checklists/` `prompts/` `examples/` のサブ構造を持つ | `platform/` `design/` `ai/` `engineering/` `launch/` `agents/` `skills/` `templates/` `prompts/` `examples/` `docs/` |
 | **Workflow成果物置き場** | `NN_Name/`（02〜08） | Development_WorkflowのPhase成果物を置く（プロジェクト実行時に使用） | `02_UX/` `06_Test/` 等 |
 
 ### 配置判定フロー
@@ -75,6 +75,7 @@ flowchart TD
 | デザイン標準 | `design/README.md` | UI/UX関連の全作業 |
 | AI実装標準 | `ai/README.md` | AI機能の全作業 |
 | エンジニアリング実行標準・Git規約 | `engineering/README.md` | 全実装作業 |
+| 事業立ち上げ・法人設立（Launch Track・Gate L1-L4・管理表・法務/労務/資金/補助金/SNS） | `launch/README.md` | `agents/strategy/business-launch.md`・`skills/business/`（Launch系9 Skill）・`skills/growth/sns-marketing-framework/` |
 | リポジトリ構造・配置 | 本書 | 全ドキュメント |
 
 ---
@@ -123,6 +124,7 @@ flowchart TD
 
 | Version | 日付 | 変更内容 | 担当 |
 |---|---|---|---|
+| 1.1.0 | 2026-10-03 | 共有資産Packageに `launch/`（Business Launch Package）を追加し、正本マップに「事業立ち上げ・法人設立」を追加 | Claude Code + Owner |
 | 1.0.0 | 2026-07-10 | 初版作成（3分類・配置判定フロー・命名規則・正本マップ・Package標準構造。番号付きディレクトリの新設凍結を規約化） | Claude Code + Owner |
 
 ---

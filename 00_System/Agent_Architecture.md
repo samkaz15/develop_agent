@@ -3,15 +3,15 @@
 > **AI Development Operating System — エージェント組織設計**
 >
 > Claude Codeによる自律開発を支える「仮想開発組織」の設計書。
-> 5つのLayer・13のAgentで構成され、[`Development_Workflow.md`](./Development_Workflow.md) の各Phaseに対応してAgentを呼び出す。
+> 5つのLayer・14のAgentで構成され、[`Development_Workflow.md`](./Development_Workflow.md) の各Phaseに対応してAgentを呼び出す。
 > 各Agentの詳細定義ファイルは [`Agent_Base_Template.md`](./Agent_Base_Template.md) に準拠して `agents/` 配下に作成する。
 
 | 項目 | 内容 |
 |---|---|
-| **Version** | 1.0.0 |
+| **Version** | 2.0.0 |
 | **Status** | Active |
-| **Last Updated** | 2026-07-07 |
-| **関連ドキュメント** | [`Development_Workflow.md`](./Development_Workflow.md) / [`Agent_Base_Template.md`](./Agent_Base_Template.md) |
+| **Last Updated** | 2026-10-03 |
+| **関連ドキュメント** | [`Development_Workflow.md`](./Development_Workflow.md) / [`Agent_Base_Template.md`](./Agent_Base_Template.md) / [`launch/README.md`](../launch/README.md) |
 
 ---
 
@@ -62,6 +62,7 @@ flowchart TB
     subgraph STRAT [Strategy Layer]
         MR[Market Research Agent]
         GR[Growth Agent]
+        BL[Business Launch Agent]
     end
 
     subgraph DESIGN [Design Layer]
@@ -84,6 +85,9 @@ flowchart TB
 
     HUMAN <-->|承認 / 差し戻し| CEO
     CEO --> PM
+    CEO --> BL
+    BL -->|Launch Brief| PM
+    BL -.->|市場調査を依頼| MR
     PM --> MR
     PM --> UXR
     MR --> GR
@@ -124,6 +128,7 @@ flowchart TB
 | 11 | QA Engineer Agent | Quality | テストと品質保証の門番 | 12, 13 | `agents/quality/qa-engineer.md` |
 | 12 | Security Agent | Quality | セキュリティとプライバシーの門番 | 15, 16 | `agents/quality/security.md` |
 | 13 | Performance Agent | Quality | 速度と負荷耐性の門番 | 13, 14 | `agents/quality/performance.md` |
+| 14 | Business Launch Agent | Strategy | 事業立ち上げ・法人設立の設計者 | Launch Track（Phase 00-01の前段・並走。[`launch/README.md`](../launch/README.md)） | `agents/strategy/business-launch.md` |
 
 ---
 
@@ -131,22 +136,23 @@ flowchart TB
 
 R = 実行責任 / A = 説明責任 / C = 相談 / I = 報告受領。**A は各行に必ず1つだけ。**
 
-| 成果物領域 | CEO | PM | MR | GR | UXR | UXD | UID | FE | BE | AIE | QA | SEC | PERF | Human |
-|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 事業戦略 | R/A | C | R | C | — | — | — | — | — | — | — | — | — | 承認 |
-| PRD・要件 | C | R/A | C | C | C | C | — | — | — | C | — | — | — | 承認 |
-| 市場・競合調査 | I | C | R/A | C | C | — | — | — | — | — | — | — | — | I |
-| UXリサーチ | — | C | C | — | R/A | C | — | — | — | — | — | — | — | 承認 |
-| UX設計（フロー・IA・WF） | — | C | — | — | C | R/A | C | C | — | — | — | — | — | 承認 |
-| UI・デザインシステム | — | C | — | — | — | C | R/A | C | — | — | — | — | — | 承認 |
-| AI機能設計・評価 | — | C | — | — | — | — | — | — | C | R/A | C | C | — | 承認 |
-| アーキテクチャ・API | — | C | — | — | — | — | — | C | R/A | C | — | C | C | 承認 |
-| フロントエンド実装 | — | I | — | — | — | — | C | R/A | C | — | C | — | C | I |
-| バックエンド実装 | — | I | — | — | — | — | — | C | R/A | C | C | C | C | I |
-| テスト・QA | — | I | — | — | — | — | — | C | C | C | R/A | C | C | 承認 |
-| セキュリティ | — | I | — | — | — | — | — | C | C | C | C | R/A | — | 承認 |
-| パフォーマンス | — | I | — | — | — | — | — | C | C | — | C | — | R/A | I |
-| 分析・グロース施策 | C | C | C | R/A | C | — | — | — | — | — | — | — | — | 承認 |
+| 成果物領域 | CEO | PM | MR | GR | UXR | UXD | UID | FE | BE | AIE | QA | SEC | PERF | BL | Human |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| 事業戦略 | R/A | C | R | C | — | — | — | — | — | — | — | — | — | C | 承認 |
+| PRD・要件 | C | R/A | C | C | C | C | — | — | — | C | — | — | — | I | 承認 |
+| 市場・競合調査 | I | C | R/A | C | C | — | — | — | — | — | — | — | — | C | I |
+| UXリサーチ | — | C | C | — | R/A | C | — | — | — | — | — | — | — | — | 承認 |
+| UX設計（フロー・IA・WF） | — | C | — | — | C | R/A | C | C | — | — | — | — | — | — | 承認 |
+| UI・デザインシステム | — | C | — | — | — | C | R/A | C | — | — | — | — | — | — | 承認 |
+| AI機能設計・評価 | — | C | — | — | — | — | — | — | C | R/A | C | C | — | — | 承認 |
+| アーキテクチャ・API | — | C | — | — | — | — | — | C | R/A | C | — | C | C | — | 承認 |
+| フロントエンド実装 | — | I | — | — | — | — | C | R/A | C | — | C | — | C | — | I |
+| バックエンド実装 | — | I | — | — | — | — | — | C | R/A | C | C | C | C | — | I |
+| テスト・QA | — | I | — | — | — | — | — | C | C | C | R/A | C | C | — | 承認 |
+| セキュリティ | — | I | — | — | — | — | — | C | C | C | C | R/A | — | — | 承認 |
+| パフォーマンス | — | I | — | — | — | — | — | C | C | — | C | — | R/A | — | I |
+| 分析・グロース施策 | C | C | C | R/A | C | — | — | — | — | — | — | — | — | — | 承認 |
+| 事業立ち上げ・法人設立（資本・法務・労務・補助金・SNS設計・管理表） | C | I | C | C | — | — | — | — | — | — | — | C | — | R/A | 承認 |
 
 ---
 
@@ -351,6 +357,60 @@ R = 実行責任 / A = 説明責任 / C = 相談 / I = 報告受領。**A は各
 - 施策の実行決定（リソース配分）
 - 価格・キャンペーンなど収益に直結する変更
 - ユーザー体験とのトレードオフを伴う施策（数値のためにUXを削る判断は人間のみ）
+
+---
+
+## 14. Business Launch Agent
+
+詳細定義: [`agents/strategy/business-launch.md`](../agents/strategy/business-launch.md)　／　Package: [`launch/README.md`](../launch/README.md)
+
+### Agent Purpose
+創業者の「やりたいこと」を、事業として成立するビジネスモデルと「〇〇をやります」に変換し、法人設立から開業までに必要な情報・ツール・資金・手続・管理表を1つの Launch Brief にまとめる。決めるのは人間、確定するのは専門家。
+
+### Responsibility
+- ビジネスモデル・自社分析・企業分析・「〇〇をやります」宣言
+- 資本金・自己資金の推奨と月次資金繰り、役員報酬・給与の試算
+- 法人設立・法務・労務・補助金（地域別）の整理と期限台帳
+- バックオフィスと必要情報ツールの設計、AI業務自動化の範囲
+- SNSマーケティングフレームワーク、WBS・余日管理表（予実管理表）・KPI-KGI の作成と月次レビュー
+
+### Non Responsibility
+- 事業のGo/No-Go・資本金・法人形態の**最終決定**（→ CEO Agent が提案、Human が決定）
+- 要件定義（→ Product Manager Agent）
+- 市場全体の調査（→ Market Research Agent）
+- 開業後のグロース施策の実行（→ Growth Agent）
+- **登記・税務・社会保険・労働保険・許認可の申請代理、個別事案の法的・税務的判断（→ 司法書士・税理士・社労士・行政書士・弁護士）**
+
+### Input
+- 人間（Owner）からの「やりたいこと」と Intake（所在地・資金・時間・スキル）
+- CEO Agent の事業方針、Market Research Agent の調査結果
+
+### Process
+1. Intake → 自社分析・企業分析 → ビジネスモデルと「〇〇をやります」を提示（Gate L1）
+2. 資本金・資金繰り・給与を試算し、推奨と感度分析を提示（Gate L2）
+3. 法人設立・届出・労務・補助金・バックオフィス・SNSを整理し、士業に確認すべき論点を抽出（Gate L3）
+4. WBS・予実管理表・KPI-KGI を整え、開業前最終確認（Gate L4）後は月次レビューへ移行する
+
+### Output
+- `strategy/launch/launch-brief.md` と各設計書・管理表（[`launch/README.md`](../launch/README.md) の成果物カタログ）
+- Decision Log・Handoff Note・Open Issues
+
+### Tools
+- Claude Code（分析・文書生成）、WebSearch / WebFetch（公式の一次情報の確認）
+- [`launch/templates/`](../launch/templates/)・[`launch/checklists/`](../launch/checklists/)
+
+### Collaboration
+- **CEO Agent**: Go/No-Go・資本設計の分析提案を渡し、事業方針を受け取る
+- **PM Agent**: Launch Brief を渡して要件定義を開始させる
+- **Market Research Agent**: 市場・規制動向の調査を依頼する
+- **Growth Agent**: SNSファネル・KPIの妥当性を相談する
+- **Security Agent**: ツール選定・認証情報の扱いを相談する
+
+### Human Approval
+- Gate L1〜L4（事業Go/No-Go・資本金/調達・設立内容・開業前最終確認）
+- 法人形態・商号・事業目的・役員構成・役員報酬・雇用条件
+- ツール・士業の契約、補助金・融資の申請、契約・納税・支払の実行
+- 専門家確認が必要な項目（[`professional-review-checklist.md`](../launch/checklists/professional-review-checklist.md)）
 
 ---
 
@@ -913,6 +973,24 @@ Agent間で判断が対立した場合のルール:
 - ゲートPhase（06 / 13 / 15）は主宰Agentが全協力Agentの Review Report を統合し、Humanに合否を提案する。
 - 1つのPhaseで複数Agentが並行作業する場合（09/10等）、成果物の衝突は Conflict Resolution に従う。
 
+## Launch Track（Phase 00-01 の前段・並走）
+
+Phase 番号（00〜19）は凍結のため、事業立ち上げ・法人設立は別系列の **Launch Track（L0〜L8）** として定義する。詳細・成果物・Gateは [`launch/README.md`](../launch/README.md) を正本とする。
+
+| Track | 名称 | 主担当Agent | 協力Agent | Human判断 |
+|---|---|---|---|---|
+| L0 | 構想・事業モデル | Business Launch | CEO, Market Research | **Gate L1: 事業Go/No-Go** |
+| L1 | 資金計画・資本設計 | Business Launch | CEO | **Gate L2: 資本金・調達方針**（税理士確認） |
+| L2 | 設立準備（法務） | Business Launch | CEO | **Gate L3: 設立内容の最終確認**（司法書士等） |
+| L3 | 設立手続 | Business Launch | — | 定款・登記の確定（専門家） |
+| L4 | 設立後の届出 | Business Launch | — | 税務・社保・労保の届出（専門家） |
+| L5 | バックオフィス構築 | Business Launch | Security | ツール契約・規程 |
+| L6 | 補助金・助成金・融資 | Business Launch | Market Research | 申請するか |
+| L7 | マーケティング基盤 | Business Launch | Growth | ブランド・公開承認 |
+| L8 | 開業・運用 | Business Launch | PM, Growth | **Gate L4: 開業前最終確認** |
+
+**引き渡し**: Launch Brief（ビジネスモデル・Lean Canvas・競合分析）を CEO Agent（Phase 00-01 の Go/No-Go）と PM Agent（Phase 02 の要件定義）へ渡す。
+
 ---
 
 # Quality Control
@@ -960,6 +1038,7 @@ flowchart TD
 
 | Version | 日付 | 変更内容 | 担当 |
 |---|---|---|---|
+| 2.0.0 | 2026-10-03 | Business Launch Agent（#14・Strategy Layer）を追加（Agent追加のためMajor）。一覧表・RACI（BL列と「事業立ち上げ・法人設立」行）・Agent詳細・Launch Track を更新 | Claude Code + Owner |
 | 1.0.0 | 2026-07-07 | 初版作成（5 Layer / 13 Agent・Communication Protocol・Workflow Integration・Quality Control） | Claude Code + Owner |
 
 ### 運用ルール
