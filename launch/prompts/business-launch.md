@@ -54,7 +54,7 @@
 
 | 目的 | 追記する Task | 使うSkill | 主な出力 |
 |---|---|---|---|
-| 資本金の適正額だけ知りたい | 「資本金の推奨レンジを根拠付きで提案」 | `capital-planning` | `capital-plan.md` / `finance-plan.csv` |
+| 資本金の適正額だけ知りたい | 「資本金の推奨レンジを根拠付きで提案」 | `capital-planning` | `capital-plan.md` / `cashflow-plan.csv` |
 | 設立手順と必要書類を知りたい | 「法人形態の比較と設立手順・届出一覧」 | `incorporation-legal` | `legal-setup-plan.md` / `legal-procedure-tracker.csv` |
 | 補助金・助成金を地域別に調べたい | 「{{PREFECTURE}}/{{CITY}} の創業向け制度を一次情報で調査」 | `subsidy-research` | `subsidy-tracker.csv` |
 | 給与を決めたい | 「役員報酬・従業員給与のシナリオ比較」 | `payroll-design` | `payroll-simulation.csv` |
@@ -63,7 +63,7 @@
 | 競合を分析したい | 「競合3社以上の企業分析」 | `company-analysis` | `company-analysis.md` |
 | 自分たちの強みを棚卸ししたい | 「創業者の自社分析」 | `self-analysis` | `self-analysis.md` |
 | SNS戦略を作りたい | 「SNSマーケ戦略とコンテンツカレンダー」 | `sns-marketing-framework` | `sns-marketing-framework.md` / `sns-content-calendar.csv` |
-| 管理表を作りたい | 「WBSと余日管理表（予実）を作成」 | `launch-planning` | `wbs-incorporation.csv` / `budget-actual-tracker.csv` |
+| 管理表を作りたい | 「WBSと余日管理表（予実）を作成」 | `launch-planning` | `wbs-incorporation.xlsx` / `yojitsu-template.xlsx` |
 
 ---
 
@@ -74,7 +74,7 @@
 `agents/strategy/business-launch.md` の Business Launch Agent として、`launch-planning` Skill を使ってください。
 
 ## Task Request
-- **Task**: `strategy/launch/sheets/budget-actual-tracker.csv` と `kpi-kgi.csv` の今月分実績を読み、予実差異の要因（事実と仮説を分けて）・KPIの勝ち/負けパターン・来月の施策案を提示してください。
+- **Task**: `strategy/launch/sheets/yojitsu-template.xlsx` と `kpi-kgi.csv` の今月分実績を読み、予実差異の要因（事実と仮説を分けて）・KPIの勝ち/負けパターン・来月の施策案を提示してください。
 - **Expected Output**: `strategy/launch/monthly-review-{{YYYY-MM}}.md`
 - **Constraints**: 施策の実行決定・予算の変更は提案止まり（人間が決定）
 ```

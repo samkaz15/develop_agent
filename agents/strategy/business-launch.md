@@ -184,9 +184,9 @@ flowchart TD
 | 企業分析 | `strategy/launch/company-analysis.md` | Markdown | `company-analysis` |
 | 自社分析 | `strategy/launch/self-analysis.md` | Markdown | `self-analysis` |
 | SNSマーケティングフレームワーク | `strategy/launch/sns-marketing-framework.md` | Markdown | `sns-marketing-framework` |
-| WBS | `strategy/launch/sheets/wbs-incorporation.csv` | CSV | `launch-planning` |
-| 余日管理表（予実管理表） | `strategy/launch/sheets/budget-actual-tracker.csv` | CSV | `launch-planning` |
-| 資金繰り計画 | `strategy/launch/sheets/finance-plan.csv` | CSV | `capital-planning` |
+| WBS | `strategy/launch/sheets/wbs-incorporation.xlsx` | XLSX | `launch-planning` |
+| 余日管理表（月次の目標・実質値・費用・ROAS） | `strategy/launch/sheets/yojitsu-template.xlsx` | XLSX | `launch-planning` |
+| 資金繰り計画 | `strategy/launch/sheets/cashflow-plan.csv` | CSV | `capital-planning` |
 | KPI-KGI | `strategy/launch/sheets/kpi-kgi.csv` | CSV | `launch-planning` |
 | 適正給料シミュレーション | `strategy/launch/sheets/payroll-simulation.csv` | CSV | `payroll-design` |
 | 補助金・助成金・融資 リサーチ台帳 | `strategy/launch/sheets/subsidy-tracker.csv` | CSV | `subsidy-research` |
@@ -201,7 +201,7 @@ flowchart TD
 | 形式 | 用途 |
 |---|---|
 | **Markdown** | 人間が読む主成果物（Launch Brief・設計書・分析） |
-| **CSV（Googleスプレッドシートへインポート）** | 管理表（WBS・予実・資金繰り・台帳・カレンダー）。数式入り |
+| **XLSX／CSV（Googleスプレッドシートへインポート）** | 管理表。WBS・余日管理表は指定ページをトレースしたXLSX、資金繰り・台帳・カレンダー等はCSV。数式入り |
 | **Checklist** | 設立〜開業チェック・専門家確認（[`launch/checklists/`](../../launch/checklists/)） |
 | **Recommendation** | Human Approval が必要な判断（選択肢＋推奨案＋根拠） |
 

@@ -1,6 +1,6 @@
 # 法人設立〜開業 チェックリスト
 
-> 設立から開業までの**抜け漏れ防止**用。詳細な期限は [`legal-procedure-tracker.csv`](../templates/legal-procedure-tracker.csv)、工程は [`wbs-incorporation.csv`](../templates/wbs-incorporation.csv) で管理する。期限・要件は一般的な目安であり、士業・所管機関の一次情報で確認する。
+> 設立から開業までの**抜け漏れ防止**用。詳細な期限は [`legal-procedure-tracker.csv`](../templates/legal-procedure-tracker.csv)、工程は [`wbs-incorporation.xlsx`](../templates/wbs-incorporation.xlsx) で管理する。期限・要件は一般的な目安であり、士業・所管機関の一次情報で確認する。
 
 ## A. 事業・資金（Gate L1 / L2）
 

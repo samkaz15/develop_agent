@@ -22,7 +22,7 @@ tags: [launch, wbs, budget-actual, kpi, monthly-review]
 | **Version** | `1.0.0` |
 | **Category** | `business`（[`Skill_Architecture.md`](../../../00_System/Skill_Architecture.md) の7カテゴリに対応。Launch Track は [`launch/README.md`](../../../launch/README.md)） |
 | **Purpose** | 立ち上げ全工程のWBS、月次の予実管理表（余日管理表）、KPI-KGIを作成・更新し、開業後は予実差異とKPIから改善施策案を出す能力。 |
-| **Scope** | WBS（依存・日程自動計算・ゲート・担当区分）、予実管理表、KPI-KGIのファネル逆算、月次レビュー |
+| **Scope** | WBS（フェーズ行・タスク行・開始日／完了日・Duration・進捗・ガント。雛形は `wbs-template.xlsx`）、余日管理表（月次の目標・実質値・費用・ROAS。雛形は `yojitsu-template.xlsx`）、KPI-KGIのファネル逆算、月次レビュー |
 | **Related Domain** | プロジェクト管理（WBS・クリティカルパス）、予算管理（予実差異分析）、KPI設計 |
 
 ```yaml
@@ -37,8 +37,8 @@ identity:
 ## 2. Capability
 
 ### このSkillでできること
-- 立ち上げ全工程のWBSを作り、依存関係から日程を自動計算する
-- 予算を項目ごとに確定し、予算・実績・差異・達成率の4行で管理する表を作る
+- 立ち上げ全工程のWBSを作る（開始日・完了日を入れるとガントのバーと Duration が自動で入る。前後関係はタスクの並びと定義欄で管理する）
+- 余日管理表の雛形で、売上目標と実質値（実績）・成長率・手数料／物流・販管費・広告のROI・ROAS を月別に管理する
 - KGIからファネルを逆算し（顧客数→問い合わせ→アクセス→IMP→投稿数）、LTV/CAC を算出する
 - 月次レビューで差異の要因を事実と仮説に分けて整理し、改善施策案を出す
 - 期限が近いタスク・手続のリスクを抽出する
@@ -54,7 +54,7 @@ identity:
 
 ### 前提条件
 - [ ] プロジェクト開始日が決まっている
-- [ ] ビジネスモデルと資金繰り（`finance-plan.csv`）がある
+- [ ] ビジネスモデルと資金繰り（`cashflow-plan.csv`）がある
 - [ ] KGI（月次の売上目標など）の仮置きがある
 
 ### 適用条件
@@ -64,7 +64,7 @@ identity:
 ### 制約事項
 - 数値は例であり、実績で更新する
 - 祝日は考慮していない（必要なら手で調整する）
-- 実績が未入力の月は差異・達成率を算出しない
+- 成長率は「売上実質値」を入力した月から計算される。未入力の月は空欄または0になる
 
 ---
 
@@ -73,10 +73,10 @@ identity:
 | 種別 | 内容 |
 |---|---|
 | **理論** | WBS（作業分解）・クリティカルパス、予実差異分析、KGI–KPIツリー |
-| **ベストプラクティス** | 依存関係から日程を自動計算する／差異は事実と仮説を分けて原因を考える／月次で固定の日にレビューする／Gate 未通過で次工程に進めない |
-| **フレームワーク** | `wbs-incorporation.csv`、`budget-actual-tracker.csv`、`kpi-kgi.csv`、月次レビュー記録 |
+| **ベストプラクティス** | 前工程の完了日を次工程の開始日に反映する／差異は事実と仮説を分けて原因を考える／月次で固定の日にレビューする／Gate 未通過で次工程に進めない |
+| **フレームワーク** | `wbs-incorporation.xlsx`、`yojitsu-template.xlsx`、`kpi-kgi.csv`、月次レビュー記録 |
 | **業界標準** | （該当する標準規格なし。プロジェクト管理の一般的な WBS の考え方を参照） |
-| **参考ガイドライン** | [`launch/README.md` — 管理表（ベンチマークとの対応）](../../../launch/README.md#管理表ベンチマークとの対応) |
+| **参考ガイドライン** | [`launch/README.md` — 管理表の雛形（トレース元）](../../../launch/README.md#管理表の雛形トレース元) |
 
 法令・料率・制度の**具体的な数値は固定知識にしない**。使う都度、公式の一次情報で確認し、出典URLと確認日を記録する（[`launch/README.md` — 情報の鮮度ルール](../../../launch/README.md#情報の鮮度ルール)）。
 
@@ -89,7 +89,7 @@ identity:
 | 入力 | 形式 | 説明 |
 |---|---|---|
 | プロジェクト開始日 | 日付 | WBSの起点 |
-| 資金繰り計画 | CSV | `finance-plan.csv`。予算の根拠 |
+| 資金繰り計画 | CSV | `cashflow-plan.csv`。予算の根拠 |
 | KGIと転換率の仮置き | 数値 | ファネル逆算の入力 |
 
 ### 任意入力
@@ -102,8 +102,8 @@ identity:
 | 種別 | 内容 |
 |---|---|
 | **Context** | Launch Track L0〜L8。月次レビューは開業後 |
-| **前工程成果物** | `finance-plan.csv`、`sns-content-calendar.csv`、各成果物の期限 |
-| **設定値** | 開始月、固定費の月額（`fix` 列）、売上係数、KPI目標 |
+| **前工程成果物** | `cashflow-plan.csv`、`sns-content-calendar.csv`、各成果物の期限 |
+| **設定値** | WBSの開始日（`C3`）、余日管理表の開始月（`F3`）、売上係数、KPI目標 |
 
 **入力不足の場合**: 推測で補完せず、不足項目を明示して呼び出し元（Agent/人間）に差し戻す（[Section 9 Error Handling](#9-error-handling)）。
 
@@ -132,20 +132,20 @@ identity:
 
 | 出力形式 | 用途 | 出力先 |
 |---|---|---|
-| **CSV** | WBS | `strategy/launch/sheets/wbs-incorporation.csv` |
-| **CSV** | 余日管理表（予実管理表） | `strategy/launch/sheets/budget-actual-tracker.csv` |
+| **XLSX** | WBS | `strategy/launch/sheets/wbs-incorporation.xlsx`（空の雛形は `wbs-template.xlsx`） |
+| **XLSX** | 余日管理表（月次の目標・実質値・費用・ROAS） | `strategy/launch/sheets/yojitsu-template.xlsx` |
 | **CSV** | KPI-KGI（ファネル逆算） | `strategy/launch/sheets/kpi-kgi.csv` |
 | **Report** | 月次レビュー（差異要因・KPI・施策案） | `strategy/launch/monthly-review-YYYY-MM.md` |
 
-このSkillが実際に生成するのは: CSV（WBS・予実管理表・KPI-KGI）と Report（月次レビュー）
+このSkillが実際に生成するのは: XLSX（WBS・余日管理表）、CSV（KPI-KGI）、Report（月次レビュー）
 
 ---
 
 ## 7. Quality Criteria
 
 ### 完成条件（Definition of Done）
-- [ ] WBS の依存・期限・Gate・担当区分（AI/協働/人間/士業）が整合している
-- [ ] 予実管理表の予算が資金繰りと一致し、実績の入力担当と頻度が決まっている
+- [ ] WBS の開始日・完了日・Gate・担当区分（AI/協働/人間/士業）が整合している
+- [ ] 余日管理表の売上目標・費用が資金繰りと一致し、実質値（実績）の入力担当と頻度が決まっている
 - [ ] KPI-KGI の逆算結果が事業の現実と照らして妥当か確認されている
 - [ ] 月次レビューでは差異の要因が事実と仮説に分けられている
 - [ ] Decision Log（判断根拠）が記録されている

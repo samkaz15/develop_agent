@@ -102,7 +102,7 @@ identity:
 | 種別 | 内容 |
 |---|---|
 | **Context** | Launch Track L1。`capital-planning` と往復して整合させる |
-| **前工程成果物** | `finance-plan.csv`（粗利見込）、`labor-setup-plan.md` |
+| **前工程成果物** | `cashflow-plan.csv`（粗利見込）、`labor-setup-plan.md` |
 | **設定値** | 都道府県、年度、社会保険の事業主負担割合、月所定労働時間、地域別最低賃金 |
 
 **入力不足の場合**: 推測で補完せず、不足項目を明示して呼び出し元（Agent/人間）に差し戻す（[Section 9 Error Handling](#9-error-handling)）。
@@ -120,7 +120,7 @@ identity:
 | **Execute** | 最新の公表値でパラメータを更新し、確認日と出典を記録して `payroll-simulation.csv` を計算する |
 | **Validate** | 料率の確認日が記入されているか／最低賃金を満たすか／資金繰りと整合するか |
 | **Optimize** | シナリオを3つに絞り、判断に効く差分（手取り・総コスト・必要粗利）だけを示す |
-| **Finalize** | `payroll-simulation.csv` と、`finance-plan.csv` への連携値を確定する |
+| **Finalize** | `payroll-simulation.csv` と、`cashflow-plan.csv` への連携値を確定する |
 
 **運用ルール**: Validate で未達の場合は Plan に戻る（手法選定から見直す）。3回繰り返しても未達の場合は [Section 9](#9-error-handling) のエスカレーションに従う。
 

@@ -84,7 +84,7 @@
 
 ## 4. 資金計画
 
-→ [`capital-plan.md`](./capital-plan.md) / [`finance-plan.csv`](./finance-plan.csv)
+→ [`capital-plan.md`](./capital-plan.md) / [`cashflow-plan.csv`](./cashflow-plan.csv)
 
 | 項目 | Worst | Base | Best |
 |---|---|---|---|
@@ -158,8 +158,8 @@
 
 | 管理表 | 目的 | ファイル |
 |---|---|---|
-| WBS | 立ち上げ全工程のスケジュールと担当 | [`wbs-incorporation.csv`](./wbs-incorporation.csv) |
-| 余日管理表（予実管理表） | 月次の予算と実績の差異管理 | [`budget-actual-tracker.csv`](./budget-actual-tracker.csv) |
+| WBS | 立ち上げ全工程のスケジュールとガント（空の雛形は `wbs-template.xlsx`） | [`wbs-incorporation.xlsx`](./wbs-incorporation.xlsx) |
+| 余日管理表 | 月次の売上目標・実質値・費用・ROAS の管理 | [`yojitsu-template.xlsx`](./yojitsu-template.xlsx) |
 | KPI-KGI | ファネル逆算とKPIツリー | [`kpi-kgi.csv`](./kpi-kgi.csv) |
 
 ---

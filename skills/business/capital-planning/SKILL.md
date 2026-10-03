@@ -74,7 +74,7 @@ identity:
 |---|---|
 | **理論** | キャッシュフロー管理、損益分岐点分析、ユニットエコノミクス（LTV/CAC） |
 | **ベストプラクティス** | Worst シナリオでも最低ランウェイ（目安6〜12か月）を満たす／予備費は10〜20%を目安に確保／補助金は後払い前提でつなぎ資金を持つ／生活防衛資金は別枠 |
-| **フレームワーク** | 必要資金の積み上げ表、3シナリオ感度分析、資本金の判断軸①〜⑦、月次資金繰り表（`finance-plan.csv`） |
+| **フレームワーク** | 必要資金の積み上げ表、3シナリオ感度分析、資本金の判断軸①〜⑦、月次資金繰り表（`cashflow-plan.csv`） |
 | **業界標準** | 会社法（資本金の概念）、法人税・法人住民税・消費税における資本金基準（取扱いは税理士に確認） |
 | **参考ガイドライン** | 日本政策金融公庫・商工会議所の創業計画書様式、[`launch/templates/capital-plan.md`](../../../launch/templates/capital-plan.md) |
 
@@ -118,10 +118,10 @@ identity:
 |---|---|
 | **Analyze** | 売上が立つまでの期間と固定費は。資金が尽きる条件は何か |
 | **Plan** | 必要資金の積み上げ → 資金繰り（3シナリオ）→ 判断軸での資本金比較 → 調達構成の順で進める |
-| **Execute** | `finance-plan.csv` に入力し、資金ショート月・ランウェイを算出。判断軸①〜⑦を埋める |
+| **Execute** | `cashflow-plan.csv` に入力し、資金ショート月・ランウェイを算出。判断軸①〜⑦を埋める |
 | **Validate** | Worst でも最低ランウェイを満たすか／根拠のない数値がないか／生活防衛資金を含めていないか |
 | **Optimize** | 推奨レンジを絞り、「前提が崩れる条件」を明記する |
-| **Finalize** | `capital-plan.md`・`finance-plan.csv`・創業計画書の骨子を確定する |
+| **Finalize** | `capital-plan.md`・`cashflow-plan.csv`・創業計画書の骨子を確定する |
 
 **運用ルール**: Validate で未達の場合は Plan に戻る（手法選定から見直す）。3回繰り返しても未達の場合は [Section 9](#9-error-handling) のエスカレーションに従う。
 
@@ -134,7 +134,7 @@ identity:
 | 出力形式 | 用途 | 出力先 |
 |---|---|---|
 | **Markdown** | 資本金・自己資金 設計書（必要資金・調達構成・判断軸・推奨と感度分析） | `strategy/launch/capital-plan.md` |
-| **CSV** | 月次資金繰り（24か月） | `strategy/launch/sheets/finance-plan.csv` |
+| **CSV** | 月次資金繰り（24か月） | `strategy/launch/sheets/cashflow-plan.csv` |
 | **Recommendation** | 資本金・調達構成の選択肢と推奨（Gate L2 向け） | 成果物内 |
 
 このSkillが実際に生成するのは: Markdown（設計書）、CSV（資金繰り）、Recommendation（Gate L2 向け）

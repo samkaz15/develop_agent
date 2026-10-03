@@ -7,7 +7,7 @@
 
 | 項目 | 内容 |
 |---|---|
-| **Version** | 1.0.1 |
+| **Version** | 1.1.0 |
 | **Status** | Draft（初版。実案件で1回運用して Active へ） |
 | **Last Updated** | 2026-10-03 |
 | **対象範囲** | 日本国内の株式会社・合同会社の設立と、開業までの準備（個人事業・海外法人・特殊法人は対象外） |
@@ -21,7 +21,7 @@
 2. [他ドキュメントとの役割分担](#他ドキュメントとの役割分担)
 3. [Launch Track（L0〜L8）とGate](#launch-trackl0l8とgate)
 4. [成果物カタログ](#成果物カタログ)
-5. [管理表（ベンチマークとの対応）](#管理表ベンチマークとの対応)
+5. [管理表の雛形（トレース元）](#管理表の雛形トレース元)
 6. [使い方](#使い方)
 7. [専門家（士業）との境界とHuman承認](#専門家士業との境界とhuman承認)
 8. [情報の鮮度ルール](#情報の鮮度ルール)
@@ -59,7 +59,7 @@
 
 ## Launch Track（L0〜L8）とGate
 
-Phase 番号（00〜19）は凍結のため、立ち上げ工程は別系列 **L0〜L8** として定義する。工程別の詳細は [`wbs-incorporation.csv`](./templates/wbs-incorporation.csv) の WBS 番号（0〜8）と対応する。
+Phase 番号（00〜19）は凍結のため、立ち上げ工程は別系列 **L0〜L8** として定義する。工程別の詳細は [`wbs-incorporation.xlsx`](./templates/wbs-incorporation.xlsx) の WBS 番号（0〜8）と対応する。
 
 ```mermaid
 flowchart TD
@@ -85,14 +85,14 @@ flowchart TD
 | Track | 名称 | 主なSkill | 主な成果物 | WBS |
 |---|---|---|---|---|
 | L0 | 構想・事業モデル | `self-analysis` `company-analysis` `business-strategy` | `launch-brief.md` §0-2、`self-analysis.md`、`company-analysis.md` | 0.x |
-| L1 | 資金計画・資本設計 | `capital-planning` `payroll-design` | `capital-plan.md`、`finance-plan.csv`、`payroll-simulation.csv` | 1.x |
+| L1 | 資金計画・資本設計 | `capital-planning` `payroll-design` | `capital-plan.md`、`cashflow-plan.csv`、`payroll-simulation.csv` | 1.x |
 | L2 | 設立準備（法務） | `incorporation-legal` | `legal-setup-plan.md` | 2.x |
 | L3 | 設立手続 | `incorporation-legal` | 定款・登記書類（士業） | 3.x |
 | L4 | 設立後の届出 | `incorporation-legal` `labor-management` | `legal-procedure-tracker.csv` | 4.x |
 | L5 | バックオフィス構築 | `back-office-design` `labor-management` | `tool-stack-proposal.md`、`labor-setup-plan.md` | 5.x |
 | L6 | 補助金・助成金・融資 | `subsidy-research` `capital-planning` | `subsidy-tracker.csv`、創業計画書 | 6.x |
 | L7 | マーケティング基盤 | `sns-marketing-framework` | `sns-marketing-framework.md`、`sns-content-calendar.csv`、`kpi-kgi.csv` | 7.x |
-| L8 | 開業・運用 | `launch-planning` | `budget-actual-tracker.csv`、月次レビュー | 8.x |
+| L8 | 開業・運用 | `launch-planning` | `yojitsu-template.xlsx`、月次レビュー | 8.x |
 
 | Gate | 判断内容 | 判断者 | 通過条件 |
 |---|---|---|---|
@@ -111,7 +111,7 @@ flowchart TD
 |---|---|---|
 | ビジネスモデル・「〇〇をやります」・全体統合 | [`launch-brief.md`](./templates/launch-brief.md) | `business-strategy` ほか |
 | 必要な情報ツール・バックオフィス（バクラク含む） | [`tool-stack-proposal.md`](./templates/tool-stack-proposal.md) | `back-office-design` |
-| 自己資本・資本金の適正額 | [`capital-plan.md`](./templates/capital-plan.md)・[`finance-plan.csv`](./templates/finance-plan.csv) | `capital-planning` |
+| 自己資本・資本金の適正額 | [`capital-plan.md`](./templates/capital-plan.md)・[`cashflow-plan.csv`](./templates/cashflow-plan.csv) | `capital-planning` |
 | 法務（形態・設立手順・許認可・契約表示） | [`legal-setup-plan.md`](./templates/legal-setup-plan.md)・[`legal-procedure-tracker.csv`](./templates/legal-procedure-tracker.csv) | `incorporation-legal` |
 | 労務（雇用・保険・規程・運用） | [`labor-setup-plan.md`](./templates/labor-setup-plan.md) | `labor-management` |
 | 適正給料計算 | [`payroll-simulation.csv`](./templates/payroll-simulation.csv) | `payroll-design` |
@@ -119,31 +119,26 @@ flowchart TD
 | 企業分析（競合・ベンチマーク） | [`company-analysis.md`](./templates/company-analysis.md) | `company-analysis` |
 | 自社分析 | [`self-analysis.md`](./templates/self-analysis.md) | `self-analysis` |
 | SNSマーケティングフレームワーク | [`sns-marketing-framework.md`](./templates/sns-marketing-framework.md)・[`sns-content-calendar.csv`](./templates/sns-content-calendar.csv) | `sns-marketing-framework` |
-| WBS | [`wbs-incorporation.csv`](./templates/wbs-incorporation.csv) | `launch-planning` |
-| 余日管理表（予実管理表） | [`budget-actual-tracker.csv`](./templates/budget-actual-tracker.csv) | `launch-planning` |
+| WBS | [`wbs-template.xlsx`](./templates/wbs-template.xlsx)（空）・[`wbs-incorporation.xlsx`](./templates/wbs-incorporation.xlsx)（法人設立版） | `launch-planning` |
+| 余日管理表（月次の目標・実績・費用・ROAS） | [`yojitsu-template.xlsx`](./templates/yojitsu-template.xlsx) | `launch-planning` |
 | KPI・KGI | [`kpi-kgi.csv`](./templates/kpi-kgi.csv) | `launch-planning` / `kpi-design` |
 | 設立〜開業の抜け漏れ防止 | [`incorporation-checklist.md`](./checklists/incorporation-checklist.md) | — |
 | 専門家確認の要否 | [`professional-review-checklist.md`](./checklists/professional-review-checklist.md) | — |
 
 ---
 
-## 管理表（ベンチマークとの対応）
+## 管理表の雛形（トレース元）
 
-ベンチマーク（Googleスプレッドシート）の構造を、業種に依存しない形で再設計した。
+雛形は、依頼者が指定した**2ページだけ**をトレースした。それ以外のタブ・ファイルはベンチマークにしていない（今後も、指定のないページは参照しない）。事業固有の内容（項目名・数値・リンク・メモ）は持ち込まず、**行と列の構成・書式・結合・見出し・日付の仕組み**だけを再現した。
 
-| ベンチマークのシート | 本Packageのテンプレート | 主な変更点 |
-|---|---|---|
-| `WBS`（WBS番号・フェーズ・タスク・定義・依存・アウトプット・担当・自動化レベル・開始日・期限・日数・進捗＋日次ガント） | `wbs-incorporation.csv` | 法人設立〜開業の約50タスクを投入済み。開始日は依存タスクの期限から**自動計算**（開始日セルを変えると全日程が連動）。ガントは週単位の ■ 表示。担当区分に「士業」を追加し、ゲート列を追加 |
-| `余日管理`（月次列・`fix`列） | `budget-actual-tracker.csv` | 項目ごとに予算/実績/差異/達成率の4行。`fix`列は月額固定の項目を予算行へ自動展開。実績が未入力の月は差異を空欄にする |
-| `ファイナンス`（カテゴリ・項目・項目備考×月次） | `finance-plan.csv` | 24か月の資金繰り。調達・売上・変動費・固定費・設立投資・現金残高・資金ショート判定・ランウェイ。売上係数でWorst/Base/Bestを切替 |
-| `KPI-KGIマネジメント` | `kpi-kgi.csv` | KGIから必要顧客数・問い合わせ・プロフィールアクセス・IMP・投稿数を**逆算**。LTV/CAC付き |
-| `X_c`・`movie_c`・`blog記事`（投稿日・ジャンル・ステータス・最初の文言・台本・心理効果・IMP・ER・プロフィールアクセス・問い合わせ） | `sns-content-calendar.csv` | 媒体を1シートに統合し、ER（エンゲージメント率）を自動計算。UTM列を追加 |
-| `AIエージェント業務自動化一覧` | `tool-stack-proposal.md` §3 | 自動化レベル（AI/協働/人間）と人間の承認点を明記 |
-| `エージェントWBS`・`一般アプリ`（担当AI・機能分類・優先度） | `wbs-incorporation.csv` の「担当(Agent/Skill)」列 | プロダクト開発側のWBSは `Development_Workflow.md` が正本 |
+| トレース元（指定された2ページ） | 本Packageの雛形 | そのまま引き継いだもの | 一般化・補正したもの |
+|---|---|---|---|
+| `ファイナンス`（余日管理表） | [`yojitsu-template.xlsx`](./templates/yojitsu-template.xlsx) | 行の構成（KGI／※記載／手数料・物流／販管費／運用広告費／販管費合計／ROAS）、列の構成（カテゴリ・項目・項目備考＋月次30列）、セル結合、書式（見出しの灰色・罫線・金額／％／増減の表示形式・文字色・年ラベル） | 事業固有の項目名を一般的な語に置換。開始月は `F3` の1か所だけ入力（全月が連動）。成長率（前月比・前年比）と前月比増加額にだけ数式を追加（元ページは数式なし） |
+| `product WBS`（WBS） | [`wbs-template.xlsx`](./templates/wbs-template.xlsx)（空）／[`wbs-incorporation.xlsx`](./templates/wbs-incorporation.xlsx)（法人設立の約50タスク入り） | 見出し3段（WBS Number・フェーズ・タスク・定義・完了・開始日・Duration・% of Task Complete）、4フェーズ帯の色、週×5営業日（M/T/W/R/F）のガント、フェーズ行（灰色）とタスク行の書式、列幅 | 元ページで行7にだけあった「アウトプット」「完了日」の見出しを列見出し（行5〜7を結合）に整理。ガントの青いバーは手塗りから**条件付き書式**に変更（開始日・完了日を入れると自動で塗られる）。日付ヘッダーは `C3` から自動生成。Duration は 完了日−開始日＋1。「アウトプット」列だけ列幅を拡大。法人設立版は16週（4週×4フェーズ）に拡張（元は12週） |
 
-**用語の注記**: 依頼にあった「余日管理表」は、ベンチマークのシート名に合わせ、**月次の予算と実績を管理する予実管理表**として設計した。「バクラク管理」は**バックオフィス管理**（経理・労務・総務の運用）として設計し、LayerX 社の「バクラク」シリーズも比較候補に含める。意図が異なる場合は `launch/README.md` を改訂する。
+**用語の注記**: 「余日管理表」は、指定されたページ（`ファイナンス`）の形式の**月次の管理表**（売上目標と実質値、成長率、手数料・物流、販管費、広告のROI、ROAS を月別に管理）として扱う。「バクラク管理」は**バックオフィス管理**（経理・労務・総務の運用）として設計し、LayerX 社の「バクラク」シリーズも比較候補に含める。意図が異なる場合は本書を改訂する。
 
-**ベンチマークから持ち込んでいないもの**: 認証情報・APIキー・パスワード、特定事業に固有の内容。ベンチマークのシートに認証情報と思われる文字列が平文で入っていたため、本Packageは「認証情報をシートに置かない」ルール（[セキュリティ](#セキュリティ個人情報)）を設けた。
+**ベンチマークのトレースではない成果物**: [`cashflow-plan.csv`](./templates/cashflow-plan.csv)（24か月の資金繰り）・[`kpi-kgi.csv`](./templates/kpi-kgi.csv)（ファイナンスKPIの逆算）・[`sns-content-calendar.csv`](./templates/sns-content-calendar.csv)・[`payroll-simulation.csv`](./templates/payroll-simulation.csv)・[`subsidy-tracker.csv`](./templates/subsidy-tracker.csv)・[`legal-procedure-tracker.csv`](./templates/legal-procedure-tracker.csv) と文書テンプレートは、Agent が出力するために本Packageで独自に設計したもの（上記2ページ以外を元にしていない）。
 
 ---
 
@@ -153,14 +148,14 @@ flowchart TD
 
 [`prompts/business-launch.md`](./prompts/business-launch.md) の起動プロンプトを使う。出力先は対象プロジェクトの `strategy/launch/`（[`Project_Template.md`](../00_System/Project_Template.md) の `strategy/` 配下）。
 
-### CSVをGoogleスプレッドシートで使う
+### 管理表をGoogleスプレッドシートで使う
 
-1. スプレッドシートで **ファイル → インポート → アップロード** を選び、CSVを指定する（「スプレッドシートを新規作成」または「新しいシートを挿入」）
-2. 区切り文字は「カンマ」、「テキストを数値、日付、数式に変換する」を**オン**にする
-3. 日付が数値（例: 46327）で表示される列は、**表示形式 → 日付** に変更する
-4. WBSは `C2`（プロジェクト開始日）、資金繰りは `B2`（開始月）、予実は `C2`（開始月）、法務台帳は `B2〜B5`（設立日など）を入力する
-5. 数式のセルは上書きしない（入力欄は各ファイルの注記を参照）。シナリオ比較は資金繰りシートを複製し `B3`（売上係数）だけ変える
-6. WBSのガント（■）に色を付けたい場合は、条件付き書式で「テキストが ■ に等しい」を指定する
+1. **ファイル → インポート → アップロード** でファイルを指定する（「スプレッドシートを新規作成」または「新しいシートを挿入」）。xlsx は書式・結合・条件付き書式ごと取り込まれる
+2. **WBS（xlsx）**: `C3` にプロジェクト開始日を入れる。各タスクの開始日（H列）と完了日（I列）を入れると、Duration とガントのバーが自動で入る。「完了」列は「✓」を選ぶ
+3. **余日管理表（xlsx）**: `F3` に開始月（1日付）を入れる。以降の月・年ラベルは自動。成長率の行は「売上実質値」の行を入れると計算される
+4. **CSV（資金繰り・KPI-KGI・給与・補助金・法務台帳・SNSカレンダー）**: 「テキストを数値、日付、数式に変換する」を**オン**にする。入力欄は 資金繰り `B2`（開始月）・`B3`（売上係数）、法務台帳 `B2〜B5`（設立日など）
+5. 日付が数値（例: 46327）で表示されたら、**表示形式 → 日付** に変更する。数式のセルは上書きしない
+6. シナリオ比較は資金繰りシートを複製し `B3`（売上係数）だけ変える
 
 > 祝日は考慮していない。給与・保険料率・補助金などの**例示値は必ず最新の公表値で更新**し、確認日を備考に残す。
 
@@ -222,7 +217,7 @@ flowchart TD
 ```
 launch/
 ├── README.md        # 本書（Package正本）
-├── templates/       # 成果物テンプレート（md 8 + csv 8）
+├── templates/       # 成果物テンプレート（md 8 + xlsx 3 + csv 6）
 ├── checklists/      # 設立〜開業チェックリスト・士業レビュー
 ├── prompts/         # Agent起動プロンプト
 └── examples/        # 実案件の良例・失敗例（運用後に蓄積）
@@ -236,6 +231,7 @@ launch/
 
 | Version | 日付 | 変更内容 | 担当 |
 |---|---|---|---|
+| 1.1.0 | 2026-10-03 | 管理表の雛形を、依頼者が指定した2ページ（`ファイナンス`・`product WBS`）のトレースに作り直し（`yojitsu-template.xlsx`・`wbs-template.xlsx`・`wbs-incorporation.xlsx`）。旧CSV2種を削除し、資金繰りを `cashflow-plan.csv` に改名。指定外ページへの言及を削除 | Claude Code + Owner |
 | 1.0.1 | 2026-10-03 | 公開リポジトリのため、ベンチマーク元の特定につながる記述を一般化（内容の変更なし） | Claude Code + Owner |
 | 1.0.0 | 2026-10-03 | 初版作成（Launch Track L0〜L8・Gate L1〜L4・成果物カタログ・管理表8種・文書テンプレート8種・チェックリスト2種・起動プロンプト・専門家境界・鮮度ルール・地域別補助金収集ルール・セキュリティルール） | Claude Code + Owner |
 
