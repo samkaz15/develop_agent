@@ -25,6 +25,23 @@
 | Marketing | `growth/marketing/` | growth | 🔲 Planned |
 | CRO | `growth/cro/` | growth | 🔲 Planned |
 
+## Business Launch Package の Skill（10 Skill・Status: Draft）
+
+定義の正本は各 `SKILL.md`。Package は [`launch/README.md`](../launch/README.md)、実行Agentは [`agents/strategy/business-launch.md`](../agents/strategy/business-launch.md)。
+
+| Skill | パス | カテゴリ | Status |
+|---|---|---|---|
+| Self Analysis | `business/self-analysis/` | business | 🟡 Draft |
+| Company Analysis | `business/company-analysis/` | business | 🟡 Draft |
+| Capital Planning | `business/capital-planning/` | business | 🟡 Draft |
+| Incorporation Legal | `business/incorporation-legal/` | business | 🟡 Draft |
+| Labor Management | `business/labor-management/` | business | 🟡 Draft |
+| Payroll Design | `business/payroll-design/` | business | 🟡 Draft |
+| Subsidy Research | `business/subsidy-research/` | business | 🟡 Draft |
+| Back-office Design | `business/back-office-design/` | business | 🟡 Draft |
+| Launch Planning | `business/launch-planning/` | business | 🟡 Draft |
+| SNS Marketing Framework | `growth/sns-marketing-framework/` | growth | 🟡 Draft |
+
 ## Package拡張Skill（各Packageが定義）
 
 | Skill群 | 定義元 | パス |
@@ -39,5 +56,5 @@
 ### 追加ルール
 
 1. Skill追加時は本レジストリと [`Skill_Architecture.md`](../00_System/Skill_Architecture.md) の一覧・Matrixを同時更新する
-2. `registry.json`（機械可読レジストリ）は最初のSkill実体作成時に導入する（[`Skill_Base_Template.md — Library Structure`](../00_System/Skill_Base_Template.md) 参照）
+2. [`registry.json`](./registry.json)（機械可読レジストリ）は Business Launch Package の Skill 実体作成時に導入済み。Skill の追加・廃止のたびに更新する（[`Skill_Base_Template.md — Library Structure`](../00_System/Skill_Base_Template.md) 参照）
 3. Skillの実体作成は、対応するAgent・実案件の需要が発生した時点で行う（先回りで量産しない）

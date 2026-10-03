@@ -18,6 +18,7 @@
 | P3-4 | Growth | `strategy/growth.md` | Strategy | 🔲 Planned |
 | P4-1 | Frontend Engineer | `engineering/frontend.md` | Engineering | 🔲 Planned |
 | P4-2 | Performance | `quality/performance.md` | Quality | 🔲 Planned |
+| L-1 | Business Launch | `strategy/business-launch.md` | Strategy | 🟡 Draft |
 
 **Status凡例**: 🔲 Planned / 🟡 Draft / ✅ Active / ⛔ Deprecated
 
@@ -26,3 +27,4 @@
 1. 新Agentは [`Agent_Base_Template.md`](../00_System/Agent_Base_Template.md) をコピーして作成し、同テンプレートの「新規Agent作成チェックリスト」を全て満たしてからマージする
 2. 本レジストリ・[`Agent_Architecture.md`](../00_System/Agent_Architecture.md) の一覧/RACI/Workflow統合表を同時に更新する
 3. P0の2体（PM・CEO）完成時点で要件定義（Gate Aまで）の実運用を開始できる
+4. 優先度 `L-` は事業立ち上げ（Launch Track）用のAgent。要件定義の P0〜P4 とは独立に、新規事業の立ち上げ案件が発生した時点で運用を開始できる（[`launch/README.md`](../launch/README.md)）

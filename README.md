@@ -6,9 +6,9 @@ AIサービス・Webサービス・SaaS・モバイルアプリ・AIエージェ
 
 | 項目 | 内容 |
 |---|---|
-| **Version** | 1.0.0 |
+| **Version** | 1.1.0 |
 | **Status** | Active（設計層完成・実行層構築中） |
-| **Last Updated** | 2026-07-10 |
+| **Last Updated** | 2026-10-03 |
 
 ---
 
@@ -35,9 +35,9 @@ develop_agent/
 ├── 00_System/
 │   ├── Repository_Standard.md     # リポジトリ構造・配置規約の正本
 │   ├── Development_Workflow.md    # 標準開発フロー（Phase 00-19 + 改善ループ）
-│   ├── Agent_Architecture.md      # 仮想開発組織（5 Layer / 13 Agent / RACI）
+│   ├── Agent_Architecture.md      # 仮想開発組織（5 Layer / 14 Agent / RACI）
 │   ├── Agent_Base_Template.md     # 全Agent共通の定義テンプレート（13セクション）
-│   ├── Skill_Architecture.md      # スキル能力体系（7カテゴリ / 17 Skill）
+│   ├── Skill_Architecture.md      # スキル能力体系（7カテゴリ / 27 Skill）
 │   ├── Skill_Base_Template.md     # 全Skill共通の定義テンプレート（12セクション）
 │   ├── Quality_Standard.md        # 品質基準の単一情報源（10領域・数値基準・Score）
 │   ├── Review_Process.md          # レビュー実行機構（7ステージ・Gate・Severity）
@@ -52,9 +52,10 @@ develop_agent/
 ├── design/         # Design Package（UX/UI原則・Figma System・UX Writing・A11y）
 ├── ai/             # AI Package（Prompt・RAG・評価駆動・AI Safety の5 Layer）
 ├── engineering/    # Engineering Package（13 Domain実行標準・Git規約・12 Review）
+├── launch/         # Business Launch Package（事業立ち上げ・法人設立・資本/法務/労務/補助金/SNS・WBS/余日管理表）
 │
 │  ── 実行資産（構築中） ──
-├── agents/         # Agent定義ファイル（Agent_Base_Template準拠・13体を順次作成）
+├── agents/         # Agent定義ファイル（Agent_Base_Template準拠・14体を順次作成）
 ├── skills/         # Skillライブラリ（Skill_Base_Template準拠・レジストリ管理）
 ├── templates/      # 成果物テンプレート（Requirement_Template ほか）
 ├── prompts/        # 再利用可能プロンプト
@@ -74,6 +75,7 @@ develop_agent/
 3. **要件定義を行う**: `templates/Requirement_Template.md` をコピーし、`01_Product/Requirement_Engineering_Framework.md` の20ステージを進める（Gate A〜Dは人間が判定）
 4. **開発する**: Development_Workflow の Phase 03以降を、各Package（platform / design / ai / engineering）の標準に従って実行する
 5. **学びを還元する**: 実案件で得た知見は各Packageの `examples/`・チェックリスト・基準に還元する
+6. **新規事業・法人設立から始める**: `launch/README.md` の Launch Track（L0〜L8・Gate L1〜L4）に従い、`launch/prompts/business-launch.md` で Business Launch Agent を起動する。ビジネスモデル・資本金・法人設立・労務・補助金・SNS・WBS／余日管理表まで出力し、成果物は Phase 00-01 へ引き渡す
 
 ## 運用ルール
 
@@ -84,6 +86,7 @@ develop_agent/
 
 ## ロードマップ（実行層の構築順）
 
+- [x] **L-1**: `agents/strategy/business-launch.md` と Launch Skill 10種・`launch/` Package（Draft。実案件で1回運用して Active へ）
 - [ ] **P0**: `agents/executive/product-manager.md`・`ceo.md`（この2体で要件定義Gate Aまで運用可能）
 - [ ] **P1**: Market Research / UX Research Agent、最初の実案件で要件定義を開始
 - [ ] **P2以降**: 残りAgent・Skill実体・ドキュメントテンプレート群を実案件と並走で整備

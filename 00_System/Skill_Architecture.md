@@ -8,10 +8,10 @@
 
 | 項目 | 内容 |
 |---|---|
-| **Version** | 1.0.0 |
+| **Version** | 1.1.0 |
 | **Status** | Active |
-| **Last Updated** | 2026-07-07 |
-| **関連ドキュメント** | [`Development_Workflow.md`](./Development_Workflow.md) / [`Agent_Architecture.md`](./Agent_Architecture.md) / [`Agent_Base_Template.md`](./Agent_Base_Template.md) / [`Skill_Base_Template.md`](./Skill_Base_Template.md) |
+| **Last Updated** | 2026-10-03 |
+| **関連ドキュメント** | [`Development_Workflow.md`](./Development_Workflow.md) / [`Agent_Architecture.md`](./Agent_Architecture.md) / [`Agent_Base_Template.md`](./Agent_Base_Template.md) / [`Skill_Base_Template.md`](./Skill_Base_Template.md) / [`launch/README.md`](../launch/README.md) |
 
 ---
 
@@ -69,6 +69,15 @@ mindmap
     01 Business
       Market Research
       Business Strategy
+      Self Analysis
+      Company Analysis
+      Capital Planning
+      Incorporation Legal
+      Labor Management
+      Payroll Design
+      Subsidy Research
+      Back-office Design
+      Launch Planning
     02 Product
       Product Management
       KPI Design
@@ -90,6 +99,7 @@ mindmap
     07 Growth
       Marketing
       CRO
+      SNS Marketing Framework
 ```
 
 ---
@@ -115,6 +125,18 @@ mindmap
 | 15 | Performance | 06 Quality | 速度改善・負荷検証能力 | 13, 14 | High |
 | 16 | Marketing | 07 Growth | SEO・コンテンツ・広告能力 | 16, 18, 19 | Medium |
 | 17 | CRO | 07 Growth | CVR改善・A/Bテスト能力 | 19 | High |
+| 18 | Self Analysis | 01 Business | 創業者・組織の強みと制約の棚卸し能力 | Launch L0 | Medium |
+| 19 | Company Analysis | 01 Business | 競合・ベンチマーク企業の深掘り分析能力 | Launch L0, L7 | High |
+| 20 | Capital Planning | 01 Business | 必要資金の逆算・資本金と資金繰りの設計能力 | Launch L1 | Medium |
+| 21 | Incorporation Legal | 01 Business | 法人設立・届出・法務論点の整理能力（確定は士業） | Launch L2-L4 | Medium |
+| 22 | Labor Management | 01 Business | 雇用・保険・規程の整理能力（確定は社労士） | Launch L4-L5 | Medium |
+| 23 | Payroll Design | 01 Business | 役員報酬・給与の試算と適正水準の提示能力 | Launch L1 | Medium |
+| 24 | Subsidy Research | 01 Business | 補助金・助成金・融資の地域別一次情報収集・評価能力 | Launch L6 | High |
+| 25 | Back-office Design | 01 Business | バックオフィス運用とツール選定・自動化範囲の設計能力 | Launch L5 | Medium |
+| 26 | Launch Planning | 01 Business | WBS・予実管理（余日管理表）・KPI-KGIの作成と月次レビュー能力 | Launch L0-L8 | High |
+| 27 | SNS Marketing Framework | 07 Growth | SNS戦略・コンテンツ・ファネル設計能力 | Launch L7 | Medium |
+
+**#18〜27 は Business Launch Package で追加した Skill**。定義の正本は各 `SKILL.md`（[`Skill_Base_Template.md`](./Skill_Base_Template.md) の12セクション形式）で、本書には要約のみを置く。カテゴリは既存の `business` / `growth` に配置し、新カテゴリは作らない。
 
 **Automation凡例**: High = 大部分をAIが実行可（人間はレビュー・承認） / Medium = AIと人間の協働が前提 / Low = 人間主導（AIは支援）
 
@@ -124,27 +146,37 @@ mindmap
 
 ● = 主利用（そのSkillの実行主体） / ○ = 副利用（参照・レビューで使用）
 
-| Skill \ Agent | CEO | PM | MR | GR | UXR | UXD | UID | FE | BE | AIE | QA | SEC | PERF |
-|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| Market Research | ○ | ○ | ● | ○ | ○ | — | — | — | — | — | — | — | — |
-| Business Strategy | ● | ○ | ○ | ○ | — | — | — | — | — | — | — | — | — |
-| Product Management | ○ | ● | — | ○ | — | — | — | — | — | — | ○ | — | — |
-| KPI Design | ○ | ● | — | ● | — | — | — | — | — | — | — | — | — |
-| UX Research | — | ○ | ○ | ○ | ● | ○ | — | — | — | — | — | — | — |
-| UX Design | — | ○ | — | — | ○ | ● | ○ | ○ | — | ○ | — | — | — |
-| UI Design | — | — | — | — | — | ○ | ● | ○ | — | — | ○ | — | — |
-| Apple HIG | — | — | — | — | — | ○ | ● | ○ | — | — | ○ | — | — |
-| Material Design | — | — | — | — | — | ○ | ● | ○ | — | — | ○ | — | — |
-| Frontend | — | — | — | — | — | — | ○ | ● | ○ | — | ○ | — | ○ |
-| Backend | — | — | — | — | — | — | — | ○ | ● | ○ | ○ | ○ | ○ |
-| AI Engineering | — | ○ | — | — | — | — | — | — | ○ | ● | ○ | ○ | — |
-| QA | — | ○ | — | — | — | — | — | ○ | ○ | ○ | ● | ○ | ○ |
-| Security | — | — | — | — | — | — | — | ○ | ○ | ○ | ○ | ● | — |
-| Performance | — | — | — | — | — | — | ○ | ○ | ○ | — | ○ | — | ● |
-| Marketing | ○ | ○ | ○ | ● | — | — | — | ○ | — | — | — | — | — |
-| CRO | — | ○ | — | ● | ○ | ○ | ○ | ○ | — | — | — | — | — |
+| Skill \ Agent | CEO | PM | MR | GR | UXR | UXD | UID | FE | BE | AIE | QA | SEC | PERF | BL |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| Market Research | ○ | ○ | ● | ○ | ○ | — | — | — | — | — | — | — | — | ○ |
+| Business Strategy | ● | ○ | ○ | ○ | — | — | — | — | — | — | — | — | — | ● |
+| Product Management | ○ | ● | — | ○ | — | — | — | — | — | — | ○ | — | — | — |
+| KPI Design | ○ | ● | — | ● | — | — | — | — | — | — | — | — | — | ○ |
+| UX Research | — | ○ | ○ | ○ | ● | ○ | — | — | — | — | — | — | — | — |
+| UX Design | — | ○ | — | — | ○ | ● | ○ | ○ | — | ○ | — | — | — | — |
+| UI Design | — | — | — | — | — | ○ | ● | ○ | — | — | ○ | — | — | — |
+| Apple HIG | — | — | — | — | — | ○ | ● | ○ | — | — | ○ | — | — | — |
+| Material Design | — | — | — | — | — | ○ | ● | ○ | — | — | ○ | — | — | — |
+| Frontend | — | — | — | — | — | — | ○ | ● | ○ | — | ○ | — | ○ | — |
+| Backend | — | — | — | — | — | — | — | ○ | ● | ○ | ○ | ○ | ○ | — |
+| AI Engineering | — | ○ | — | — | — | — | — | — | ○ | ● | ○ | ○ | — | — |
+| QA | — | ○ | — | — | — | — | — | ○ | ○ | ○ | ● | ○ | ○ | — |
+| Security | — | — | — | — | — | — | — | ○ | ○ | ○ | ○ | ● | — | — |
+| Performance | — | — | — | — | — | — | ○ | ○ | ○ | — | ○ | — | ● | — |
+| Marketing | ○ | ○ | ○ | ● | — | — | — | ○ | — | — | — | — | — | ○ |
+| CRO | — | ○ | — | ● | ○ | ○ | ○ | ○ | — | — | — | — | — | — |
+| Self Analysis | ○ | — | — | — | — | — | — | — | — | — | — | — | — | ● |
+| Company Analysis | ○ | — | ● | ○ | — | — | — | — | — | — | — | — | — | ● |
+| Capital Planning | ○ | — | — | — | — | — | — | — | — | — | — | — | — | ● |
+| Incorporation Legal | ○ | — | — | — | — | — | — | — | — | — | — | ○ | — | ● |
+| Labor Management | ○ | — | — | — | — | — | — | — | — | — | — | — | — | ● |
+| Payroll Design | ○ | — | — | — | — | — | — | — | — | — | — | — | — | ● |
+| Subsidy Research | ○ | — | ○ | — | — | — | — | — | — | — | — | — | — | ● |
+| Back-office Design | ○ | — | — | — | — | — | — | — | — | — | — | ○ | — | ● |
+| Launch Planning | ○ | ○ | — | ○ | — | — | — | — | — | — | — | — | — | ● |
+| SNS Marketing Framework | — | — | — | ○ | — | — | — | — | — | — | — | — | — | ● |
 
-Agent略称は [`Agent_Architecture.md`](./Agent_Architecture.md) のAgent一覧表に対応（MR=Market Research, GR=Growth, UXR=UX Research, UXD=UX Designer, UID=UI Designer, FE=Frontend, BE=Backend, AIE=AI Engineer）。
+Agent略称は [`Agent_Architecture.md`](./Agent_Architecture.md) のAgent一覧表に対応（MR=Market Research, GR=Growth, UXR=UX Research, UXD=UX Designer, UID=UI Designer, FE=Frontend, BE=Backend, AIE=AI Engineer, BL=Business Launch）。
 
 ---
 
@@ -1222,6 +1254,7 @@ automation_level: High
 
 | Version | 日付 | 変更内容 | 担当 |
 |---|---|---|---|
+| 1.1.0 | 2026-10-03 | Business Launch Package の Skill 10種（#18〜27）を `business` / `growth` に追加。Skill一覧・Skill Map・Agent × Skill Matrix（BL列）を更新 | Claude Code + Owner |
 | 1.0.0 | 2026-07-07 | 初版作成（7カテゴリ / 17 Skill・Execution Framework・Library Structure） | Claude Code + Owner |
 
 ### 運用ルール
